@@ -1,8 +1,22 @@
+/* Root 공통 스타일 */
+html {
+  -webkit-text-size-adjust: none;
+  background-color: #fff;
+
+  /* FIXME: 디자인 폰트 수급 후 교체 필요*/
+  font-family: '-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue" ,Arial, sans-serif';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.57;
+  letter-spacing: -1%;
+}
+
 html,
 body {
+  width: 100%;
   height: 100%;
-  font-size: 16px; // 1rem = 16px
-  //TODO:font-family 설정 필요
+  min-width: 1000px;
+  color: var(--color-gray-100);
 }
 
 html,
@@ -58,102 +72,6 @@ iframe {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-a {
-  text-decoration: none;
-}
-caption {
-  text-indent: -9999px;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-}
-fieldset {
-  border: 0;
-}
-th,
-strong,
-b {
-  font-weight: bold;
-}
-i,
-em,
-address {
-  font-style: normal;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-.blind {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  font-size: 0;
-  line-height: 0;
-}
-
-#skipnavi {
-  position: absolute;
-  left: 0;
-  top: -30px;
-}
-
-button,
-select,
-input {
-  -webkit-appearance: none;
-}
-
-button {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-/* Root 공통 스타일 */
-html {
-  -webkit-text-size-adjust: none;
-  background-color: #fff;
-
-  /* FIXME: 디자인 폰트 수급 후 교체 필요*/
-  font-family: '-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue" ,Arial, sans-serif';
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: -1%;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  min-width: 1000px;
-  color: var(--color-gray-100);
-}
-
 body,
 input,
 select,
@@ -175,6 +93,57 @@ textarea {
   resize: none;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+a {
+  -webkit-user-drag: none;
+}
+
+img {
+  vertical-align: top;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+caption {
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+fieldset {
+  border: 0;
+}
+
+i,
+em,
+address {
+  font-style: normal;
+}
+
+.blind {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+
+#skipnavi {
+  position: absolute;
+  left: 0;
+  top: -30px;
+}
+
 input[type='text'],
 input[type='password'],
 input[type='submit'],
@@ -187,8 +156,30 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: 0;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='tel'] {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--color-gray-20);
+  padding: 0 16px;
+  border-radius: 4px;
+  &::placeholder {
+    color: var(--color-gray-50);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--color-gray-100);
+  }
+  &[disabled] {
+    background-color: var(--color-gray-20);
+    color: var(--color-gray-50);
+  }
+}
+
+th,
 strong,
 b {
   /* FIXME: 디자인 스타일 - bold 표준 찾아서 교체 필요 */
@@ -198,6 +189,7 @@ b {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
 }
 
 button {
@@ -206,14 +198,4 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
-}
-
-img,
-a {
-  -webkit-user-drag: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
 }

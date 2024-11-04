@@ -1,16 +1,184 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main Page</title>
-  </head>
-  <body>
-    <h1>칼라미</h1>
-    <ul>
-      <li><a href="/pc/index.html">PC Page</a></li>
-      <li><a href="/mo/index.html">MO Page</a></li>
-      <li><a href="/guide/index.html">Style Guide Page</a></li>
-    </ul>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>바로DM/template List</title>
+    <style>
+        *{margin:0;padding:0}
+        body,html{
+            font-size:14px;
+            color:#666;
+            font-family:helvetica,'맑은고딕',sans-serif;
+        }
+        h1{
+            text-align: center;
+            color:#333;
+            padding:10px 0;
+            font-size:30px;
+        }
+        dl{ 
+            margin-bottom: 20px;
+            font-size:20px;
+            text-align: right;
+            padding:0 20px;
+        }
+        dt{
+            font-weight:700;
+        }
+        table{
+            border-collapse: collapse;
+            width:100%;
+        }
+        table thead th{
+            border-top:2px solid #2d2d2d
+        }
+        table th,table td{
+            padding:10px 0 ;
+            border-bottom:1px solid #ccc;
+            text-align: center;
+            border-right:1px solid #ccc;
+        }
+        table th:last-child, table td:last-child{
+            border-right:0;
+        }
+        table tbody tr{
+            cursor:pointer;
+        }
+        table tbody tr:hover{
+            background: #fafafa;
+        }
+        .ready{
+            color:#aaa;
+        }
+        .ing{
+            color:tomato
+        }
+        .completed{
+            color:green
+        }
+        .desc_box{
+            text-align-last: left;
+            padding-left:10px;
+        }
+        .log{
+            margin-bottom: 5px;
+            color:tomato;
+            text-align-last: left;            
+            padding-left:10px;
+        }
+        .log:before{
+            content:"*";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">바로DM template list</h1>
+    <dl class="info">
+        <dt>작성자</dt>
+        <dd id="info">lee mijin / finenuts</dd>
+    </dl>
+    <table  id="templateList">
+        <thead>
+            <tr>
+                <th scope="col">menu</th>
+                <th scope="col">depth1</th>
+                <th scope="col">depth2</th>
+                <th scope="col">depth3</th>
+                <th scope="col">name</th>
+                <th scope="col">url</th>
+                <th scope="col">status</th>
+                <th scope="col">description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- codeSnippet -->
+            <tr>
+                <td colspan="4">style guide</td>
+                <td class="name">index.html</td>
+                <td class="url">guide/index.html</td>
+                <td class="status">
+                    <span class="ing">작업중</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                        UI component style guide <br>
+                    </div>                    
+                    <p class="log">2024-11-04 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">PC include code Temp</td>
+                <td class="name">index.html</td>
+                <td class="url">pc/index.html</td>
+                <td class="status">
+                  <span class="ing">작업중</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                      gulp include 코드
+                    </div>                    
+                    <p class="log">2024-11-04 생성</p>
+                </td>
+            </tr>
+            <tr>
+              <td colspan="4">Mo include code Temp</td>
+              <td class="name">index.html</td>
+              <td class="url">mo/index.html</td>
+              <td class="status">
+                <span class="ing">작업중</span>
+              </td>
+              <td>
+                  <div class="desc_box">
+                    gulp include 코드
+                  </div>                    
+                  <p class="log">2024-11-04 생성</p>
+              </td>
+          </tr>
+            <!-- 회원 프로세스 -->
+            <tr>
+                <th scope="row" rowspan="40">회원관리</th>
+                <td rowspan="8">회원</td>
+                <td rowspan="5">가입</td>
+                <td>개인회원/사업자구분</td>
+                <td class="name">joinStart.html</td>
+                <td class="url">pc/joinStart.html</td>
+                <td class="status">
+                    
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>약관동의</td>
+                <td class="name">joinStep1.html</td>
+                <td class="url">pc/joinStep1.html</td>
+                <td class="status">
+                    <span class="completed"></span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log"></p>
+                </td>
+            </tr>   
+        </tbody>        
+    </table>
+    <script>
+        var table = document.getElementById('templateList');
+        var tr = table.getElementsByTagName('tr');
+
+        for(var i = 0; i < tr.length; i++){
+            tr[i].onclick = function(){
+                var _url = this.querySelector('.url').textContent;
+                window.open(_url,"_blank");
+            }
+        }
+    </script>
+</body>
 </html>
