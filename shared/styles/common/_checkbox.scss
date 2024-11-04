@@ -1,4 +1,4 @@
-.form-radio {
+.form-checkbox {
   display: inline-block;
   vertical-align: middle;
   margin-right: 20px;
@@ -9,7 +9,7 @@
   }
 
   /* input */
-  & > input.radio {
+  & > input.checkbox {
     position: absolute;
     left: -9999px;
   }
@@ -18,7 +18,7 @@
   > .label {
     position: relative;
     display: inline-block;
-    /* radio 크기 20 + 텍스트 좌측여백 8 */
+    /* checkbox 크기 20 + 텍스트 좌측여백 8 */
     padding-left: 28px;
     cursor: pointer;
 
@@ -40,38 +40,58 @@
       vertical-align: middle;
       width: 20px;
       height: 20px;
-      border-radius: 50%;
-      transition: box-shadow 0.1s ease;
+      transition: background-color 0.2s ease;
     }
     &:before {
-      z-index: 1;
+      z-index: 0;
       box-shadow: inset 0 0 0 1px var(--color-gray-30);
+      background-color: #fff;
+      border-radius: 2px;
     }
     &:after {
-      z-index: 0;
-      background-color: #fff;
+      z-index: 1;
+      width: 10px;
+      height: 6px;
+      left: 5px;
+      top: 6px;
+      box-sizing: border-box;
+      border-width: 0 0 2px 2px;
+      border-style: solid;
+      border-color: var(--color-gray-30);
+      transform: rotate(-45deg);
     }
   }
 
   /* 기본 - checked */
-  > input.radio:checked + .label {
+  > input.checkbox:checked + .label {
     &:before {
-      box-shadow: inset 0 0 0 6px var(--color-gray-100);
+      box-shadow: none;
+      background-color: var(--color-gray-100);
+    }
+    &:after {
+      border-color: #fff;
     }
   }
 
   /* disabled */
-  > input.radio:disabled {
+  > input.checkbox:disabled {
     + .label {
       cursor: default;
       &:before {
-        box-shadow: inset 0 0 0 1px var(--color-gray-30);
+        box-shadow: inset 0 0 0 1px var(--color-gray-20);
+      }
+      &:after {
+        border-color: var(--color-gray-20);
       }
     }
 
     &:checked + .label {
       &:before {
-        box-shadow: inset 0 0 0 6px var(--color-gray-30);
+        box-shadow: none;
+        background-color: var(--color-gray-30);
+      }
+      &:after {
+        border-color: #fff;
       }
     }
   }
@@ -84,11 +104,15 @@
       &:before {
         box-shadow: inset 0 0 0 1px var(--color-coral);
       }
+      &:after {
+        border-color: var(--color-coral);
+      }
     }
 
-    > input.radio:checked + .label {
+    > input.checkbox:checked + .label {
       &:before {
-        box-shadow: inset 0 0 0 6px var(--color-coral);
+        box-shadow: none;
+        background-color: var(--color-coral);
       }
     }
   }
@@ -99,11 +123,15 @@
       &:before {
         box-shadow: inset 0 0 0 1px var(--color-sky);
       }
+      &:after {
+        border-color: var(--color-sky);
+      }
     }
 
-    > input.radio:checked + .label {
+    > input.checkbox:checked + .label {
       &:before {
-        box-shadow: inset 0 0 0 6px var(--color-sky);
+        box-shadow: none;
+        background-color: var(--color-sky);
       }
     }
   }
