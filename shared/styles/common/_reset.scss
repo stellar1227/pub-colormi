@@ -1,129 +1,135 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+html,
+body {
+  height: 100%;
+  font-size: 16px; // 1rem = 16px
+  //TODO:font-family 설정 필요
+}
 
 html,
 body,
-div,
+p,
 span,
-applet,
-object,
-iframe,
+img,
+div,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+table,
+caption,
+thead,
+tbody,
+tr,
+th,
+td,
+col,
+colgroup,
+form,
+fieldset,
+legend,
+select,
+option,
+input,
+textarea,
+pre,
+header,
+footer,
+article,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
 strong,
-sub,
-sup,
-tt,
-var,
 b,
-u,
 i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
+em,
+a,
 figure,
 figcaption,
-footer,
-header,
-hgroup,
-menu,
 nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+embed,
+iframe {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+  box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
 }
-body {
-  line-height: 1;
-}
-ol,
-ul {
+
+ul,
+ol {
   list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+
+img {
+  vertical-align: top;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
+a {
+  text-decoration: none;
+}
+caption {
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+fieldset {
+  border: 0;
+}
+th,
+strong,
+b {
+  font-weight: bold;
+}
+i,
+em,
+address {
+  font-style: normal;
 }
 table {
+  width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
+  table-layout: fixed;
+}
+.blind {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+
+#skipnavi {
+  position: absolute;
+  left: 0;
+  top: -30px;
+}
+
+button,
+select,
+input {
+  -webkit-appearance: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
