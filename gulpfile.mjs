@@ -7,25 +7,22 @@ import rename from 'gulp-rename'
 import cleanCSS from 'gulp-clean-css'
 import fileInclude from 'gulp-file-include'
 import browserSync from 'browser-sync'
+import htmlBeautify from 'gulp-html-beautify'
 import fs from 'fs'
 
 const sassCompiler = gulpSass(sass)
 const bs = browserSync.create()
 
-/**
- * @see fileInclude https://www.npmjs.com/package/gulp-file-include
- */
-
 const paths = {
   styles: {
     mo: {
       src: 'shared/styles/mo.scss',
-      watch: 'shared/styles/**/*',
+      watch: ['shared/styles/**/*', 'shared/styles/screen/_mo.scss'],
       dest: 'build/mo/styles/',
     },
     pc: {
       src: 'shared/styles/pc.scss',
-      watch: 'shared/styles/**/*',
+      watch: ['shared/styles/**/*', 'shared/styles/screen/_pc.scss'],
       dest: 'build/pc/styles/',
     },
   },
@@ -50,85 +47,75 @@ const paths = {
   },
 }
 
-export function stylesMO() {
-  return src(paths.styles.mo.src)
-    .pipe(sassCompiler())
-    .pipe(cleanCSS())
-    .pipe(
-      rename({
-        basename: 'mo',
-        suffix: '.min',
-      })
+const htmlParse = (target) => {
+  const beautifyOptions = {
+    indent_size: 2,
+    indent_with_tabs: false,
+  }
+
+  const pathConfig = paths.html[target]
+  const srcPath = `src/${target}`
+
+  if (!fs.existsSync(srcPath)) {
+    console.log(
+      `'${srcPath}' 디렉터리가 존재하지 않아 'html${target.toUpperCase()}' 작업을 건너뜁니다.`
     )
-    .pipe(dest(paths.styles.mo.dest))
-    .pipe(bs.stream())
-}
+    return Promise.resolve()
+  }
 
-export function stylesPC() {
-  return src(paths.styles.pc.src)
-    .pipe(sassCompiler())
-    .pipe(cleanCSS())
-    .pipe(
-      rename({
-        basename: 'pc',
-        suffix: '.min',
-      })
-    )
-    .pipe(dest(paths.styles.pc.dest))
-    .pipe(bs.stream())
-}
-
-export function scripts() {
-  return src(paths.scripts.src, { sourcemaps: true })
-    .pipe(babel())
-    .pipe(concat('ui.js'))
-    .pipe(dest(paths.scripts.dest))
-    .pipe(bs.stream())
-}
-
-export function htmlIndex() {
-  return src(paths.html.index.src)
-    .pipe(dest(paths.html.index.dest))
-    .pipe(bs.stream())
-}
-
-export function htmlPC() {
-  return src(paths.html.pc.src)
+  return src(pathConfig.src)
     .pipe(
       fileInclude({
         prefix: '@@',
         basepath: 'shared/include',
       })
     )
-    .pipe(dest(paths.html.pc.dest))
+    .pipe(htmlBeautify(beautifyOptions))
+    .pipe(dest(pathConfig.dest))
     .pipe(bs.stream())
 }
 
-export function htmlMO() {
-  if (fs.existsSync('src/mo')) {
-    return src(paths.html.mo.src)
-      .pipe(
-        fileInclude({
-          prefix: '@@',
-          basepath: 'shared/include',
-        })
-      )
-      .pipe(dest(paths.html.mo.dest))
-      .pipe(bs.stream())
+export const htmlPC = () => htmlParse('pc')
+export const htmlMO = () => htmlParse('mo')
+
+const stylesParse = (target) => {
+  const pathConfig = paths.styles[target]
+  const sassOptions = {
+    outputStyle: 'expanded',
   }
-  console.log("Skipping 'htmlMO' task as 'src/mo' directory does not exist.")
-  return Promise.resolve()
+
+  return src(pathConfig.src)
+    .pipe(sassCompiler(sassOptions).on('error', sassCompiler.logError))
+    .pipe(cleanCSS())
+    .pipe(
+      rename({
+        basename: target,
+        suffix: '.min',
+      })
+    )
+    .pipe(dest(pathConfig.dest))
+    .pipe(bs.stream())
 }
 
-/*
- * You could even use `export as` to rename exported tasks
- */
-export function serve() {
+export const stylesMO = () => stylesParse('mo')
+export const stylesPC = () => stylesParse('pc')
+
+export const scripts = () =>
+  src(paths.scripts.src, { sourcemaps: true })
+    .pipe(babel())
+    .pipe(concat('ui.js'))
+    .pipe(dest(paths.scripts.dest))
+    .pipe(bs.stream())
+
+export const htmlIndex = () =>
+  src(paths.html.index.src).pipe(dest(paths.html.index.dest)).pipe(bs.stream())
+
+export const serve = () => {
   bs.init({
     server: {
       baseDir: 'build',
     },
-    open: true, // 기본 페이지 자동 열기 활성화
+    open: true,
   })
 
   watch(paths.styles.mo.watch, stylesMO)
@@ -144,7 +131,4 @@ const build = gulp.series(
   gulp.parallel(stylesMO, stylesPC, scripts, htmlIndex, htmlPC, htmlMO)
 )
 
-/*
- * Export a default task
- */
 export default gulp.series(build, serve)
