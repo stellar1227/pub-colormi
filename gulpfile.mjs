@@ -43,6 +43,10 @@ const paths = {
       src: 'src/mo/**/*.html',
       dest: 'build/mo/',
     },
+    guide: {
+      src: 'src/guide/**/*.html',
+      dest: 'build/guide/',
+    },
     include: 'shared/include/**/*.html',
   },
 }
@@ -77,6 +81,7 @@ const htmlParse = (target) => {
 
 export const htmlPC = () => htmlParse('pc')
 export const htmlMO = () => htmlParse('mo')
+export const htmlGuide = () => htmlParse('guide')
 
 const stylesParse = (target) => {
   const pathConfig = paths.styles[target]
@@ -124,11 +129,20 @@ export const serve = () => {
   watch(paths.html.index.src, htmlIndex)
   watch(paths.html.pc.src, htmlPC)
   watch(paths.html.mo.src, htmlMO)
-  watch(paths.html.include, gulp.series(htmlPC, htmlMO))
+  watch(paths.html.guide.src, htmlGuide)
+  watch(paths.html.include, gulp.series(htmlPC, htmlMO, htmlGuide))
 }
 
 const build = gulp.series(
-  gulp.parallel(stylesMO, stylesPC, scripts, htmlIndex, htmlPC, htmlMO)
+  gulp.parallel(
+    stylesMO,
+    stylesPC,
+    scripts,
+    htmlIndex,
+    htmlPC,
+    htmlMO,
+    htmlGuide
+  )
 )
 
 export default gulp.series(build, serve)
