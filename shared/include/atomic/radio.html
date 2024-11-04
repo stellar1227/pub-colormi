@@ -1,4 +1,7 @@
-<label class="form-radio">
-  <span class="label">@@label</span>
-  <input type="radio" name="@@name" class="radio" />
+<label class="form-radio @@if (typeof error != 'undefined' && error) { error } @@if (typeof valid != 'undefined' && valid) { valid }">
+  <input type="radio" name="@@name" class="radio" 
+    @@if (typeof checked != 'undefined' && checked) { checked }
+    @@if (typeof disabled != 'undefined' && disabled) { disabled }
+  />
+  <span class="label"><i>@@label</i></span>
 </label>

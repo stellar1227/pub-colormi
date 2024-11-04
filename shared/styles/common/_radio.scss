@@ -1,0 +1,111 @@
+.form-radio {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  padding-top: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  /* input */
+  & > input.radio {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* 기본 스타일 */
+  > .label {
+    position: relative;
+    display: inline-block;
+    /* radio 크기 20 + 텍스트 좌측여백 8 */
+    padding-left: 28px;
+    cursor: pointer;
+
+    /* label 내 실제 텍스트 - 상하 정렬용 element(디자인 폰트 디센/어센더 맞춤용) */
+    > i {
+      /* FIXME: 디자인폰트 적용 후 수정 필요*/
+      display: inline-block;
+      padding-top: 2px;
+      vertical-align: middle;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: box-shadow 0.1s ease;
+    }
+    &:before {
+      z-index: 1;
+      box-shadow: inset 0 0 0 1px var(--color-gray-30);
+    }
+    &:after {
+      z-index: 0;
+      background-color: #fff;
+    }
+  }
+
+  /* 기본 - checked */
+  > input.radio:checked + .label {
+    &:before {
+      box-shadow: inset 0 0 0 6px var(--color-gray-100);
+    }
+  }
+
+  /* disabled */
+  > input.radio:disabled {
+    + .label {
+      cursor: default;
+      opacity: 0.5;
+      &:before {
+        box-shadow: inset 0 0 0 1px var(--color-gray-30);
+      }
+    }
+
+    &:checked + .label {
+      &:before {
+        box-shadow: inset 0 0 0 6px var(--color-gray-30);
+      }
+    }
+  }
+
+  /* error */
+  &.error {
+    > .label {
+      color: var(--color-coral);
+
+      &:before {
+        box-shadow: inset 0 0 0 1px var(--color-coral);
+      }
+    }
+
+    > input.radio:checked + .label {
+      &:before {
+        box-shadow: inset 0 0 0 6px var(--color-coral);
+      }
+    }
+  }
+
+  /* valid */
+  &.valid {
+    > .label {
+      &:before {
+        box-shadow: inset 0 0 0 1px var(--color-sky);
+      }
+    }
+
+    > input.radio:checked + .label {
+      &:before {
+        box-shadow: inset 0 0 0 6px var(--color-sky);
+      }
+    }
+  }
+}
