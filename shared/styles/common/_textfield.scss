@@ -1,0 +1,46 @@
+.form-field {
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.6;
+  .input-field {
+    height: 48px;
+  }
+  .input-field[data-width='450px'] {
+    width: 450px;
+  }
+  .description {
+    display: none;
+    margin-top: 10px;
+  }
+  &.small {
+    font-size: 14px;
+    line-height: 1.57;
+    .input-field {
+      height: 38px;
+    }
+  }
+  &.valid {
+    .input-field {
+      box-shadow: inset 0 0 0 1px var(--color-sky);
+      &:focus {
+        box-shadow: inset 0 0 0 2px var(--color-sky);
+      }
+    }
+    .description {
+      display: block;
+      color: var(--color-sky);
+    }
+  }
+  &.error {
+    .input-field {
+      box-shadow: inset 0 0 0 1px var(--color-coral);
+      &:focus {
+        box-shadow: inset 0 0 0 2px var(--color-coral);
+      }
+    }
+    .description {
+      display: block;
+      color: var(--color-coral);
+    }
+  }
+}

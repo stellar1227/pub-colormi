@@ -3,60 +3,88 @@
   <!-- head.html 파일 포함 -->
   @@include('head-pc.html')
   <body>
-    <!-- header.html 파일 포함 -->
-    @@include('header.html') 
+    <div style="padding: 50px">
+      <!-- header.html 파일 포함 -->
+      @@include('header.html') 
 
-    <h1>Radio 샘플</h1>
+      <h1 style="font-size:2rem">Radio 샘플</h1>
 
-    @@loop('atomic/radio.html', [
-      { "label": "곰돌이", "name": "pet", "checked": true },
-      { "label": "고양이", "name": "pet" },
-    ])
-    <br />
+      @@loop('atomic/radio.html', [
+        { "label": "곰돌이", "name": "pet", "checked": true },
+        { "label": "고양이", "name": "pet" },
+      ])
+      <br />
 
-    @@loop('atomic/radio.html', [
-      { "label": "먼머", "name": "pet2", "disabled": true, "checked": true },
-      { "label": "햄찌", "name": "pet2", "disabled": true },
-    ])
-    <br />
+      @@loop('atomic/radio.html', [
+        { "label": "먼머", "name": "pet2", "disabled": true, "checked": true },
+        { "label": "햄찌", "name": "pet2", "disabled": true },
+      ])
+      <br />
+
+      @@loop('atomic/radio.html', [
+      { "label": "사자", "name": "pet3", "error": true, "checked": true },
+      { "label": "피카츄", "name": "pet3", "error": true },
+      ])
+      <br />
+
+      @@loop('atomic/radio.html', [
+        { "label": "호랭이", "name": "pet4", "valid": true, "checked": true },
+        { "label": "거부기", "name": "pet4", "valid": true },
+      ])
+      <br />
+      <br />
+
+      <h1 style="font-size:2rem">Checkbox 샘플</h1>
+
+      @@loop('atomic/checkbox.html', [
+        { "label": "곰돌이", "name": "pet", "checked": true },
+        { "label": "고양이", "name": "pet" },
+      ])
+      <br />
+
+      @@loop('atomic/checkbox.html', [
+        { "label": "먼머", "name": "pet2", "disabled": true, "checked": true },
+        { "label": "햄찌", "name": "pet2", "disabled": true },
+      ])
+      <br />
+
+      @@loop('atomic/checkbox.html', [
+      { "label": "사자", "name": "pet3", "error": true, "checked": true },
+      { "label": "피카츄", "name": "pet3", "error": true },
+      ])
+      <br />
+
+      @@loop('atomic/checkbox.html', [
+        { "label": "호랭이", "name": "pet4", "valid": true, "checked": true },
+        { "label": "거부기", "name": "pet4", "valid": true },
+      ])
+      <br />
+      <br />
+
+      <h1 style="font-size:2rem">input Textfiled 샘플</h1>
+      <p>default가 100% 이므로 width속성 쓰지말고 wrapper에 사이즈 줘서 조절해도됨 </p>
+      <br />
+      @@loop('atomic/textInput.html', [
+        { "type": "text", "placeholder": "아이디 입력해주세요", "desc": "사용가능한 아이디입니다.", "width" : "450px" ,"class": "valid"},
+      ])
+      <br />
+
+      @@loop('atomic/textInput.html', [
+        { "type": "text", "placeholder": "비밀번호를 입력해주세요", "desc": "비밀번호를 입력해주세요",  "width" : "450px" },
+      ])
+      <br />
+      <br />
+
+      @@loop('atomic/textInput.html', [
+        { "type": "text", "placeholder": "이름을 입력해주세요", "desc": "제대로 이름을 입력해주세요", "width" : "450px", "class" : "error"},
+      ])
+      <br />
+
+      @@loop('atomic/textInput.html', [
+        { "type": "text", "placeholder": "이름을 입력해주세요", "desc": "제대로 이름을 입력해주세요", "width" : "450px", "disabled": true},
+      ])
+      <br />
+    </div>
     
-    @@loop('atomic/radio.html', [
-    { "label": "사자", "name": "pet3", "error": true, "checked": true },
-    { "label": "피카츄", "name": "pet3", "error": true },
-    ])
-    <br />
-
-    @@loop('atomic/radio.html', [
-      { "label": "호랭이", "name": "pet4", "valid": true, "checked": true },
-      { "label": "거부기", "name": "pet4", "valid": true },
-    ])
-    <br />
-    <br />
-
-    <h1>Checkbox 샘플</h1>
-
-    @@loop('atomic/checkbox.html', [
-      { "label": "곰돌이", "name": "pet", "checked": true },
-      { "label": "고양이", "name": "pet" },
-    ])
-    <br />
-
-    @@loop('atomic/checkbox.html', [
-      { "label": "먼머", "name": "pet2", "disabled": true, "checked": true },
-      { "label": "햄찌", "name": "pet2", "disabled": true },
-    ])
-    <br />
-    
-    @@loop('atomic/checkbox.html', [
-    { "label": "사자", "name": "pet3", "error": true, "checked": true },
-    { "label": "피카츄", "name": "pet3", "error": true },
-    ])
-    <br />
-
-    @@loop('atomic/checkbox.html', [
-      { "label": "호랭이", "name": "pet4", "valid": true, "checked": true },
-      { "label": "거부기", "name": "pet4", "valid": true },
-    ])
-
   </body>
 </html>
