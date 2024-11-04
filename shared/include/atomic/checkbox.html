@@ -1,0 +1,7 @@
+<label class="form-checkbox @@if (typeof error != 'undefined' && error) { error } @@if (typeof valid != 'undefined' && valid) { valid }">
+  <input type="checkbox" name="@@name" class="checkbox" 
+    @@if (typeof checked != 'undefined' && checked) { checked }
+    @@if (typeof disabled != 'undefined' && disabled) { disabled }
+  />
+  <span class="label"><i>@@label</i></span>
+</label>
