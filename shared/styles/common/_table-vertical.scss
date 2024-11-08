@@ -1,0 +1,16 @@
+/*
+  Th, Td 세로배치형
+  ex) 아이디 찾기, 비밀번호 찾기
+*/
+.table-vertical {
+  > li {
+    padding-bottom: 20px;
+
+    .th-label {
+      padding-bottom: 10px;
+      font-size: 14px;
+      line-height: 14px;
+      color: var(--color-gray-100);
+    }
+  }
+}

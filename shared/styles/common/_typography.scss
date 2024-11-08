@@ -1,3 +1,4 @@
+/* Typo - title(헤딩) */
 .typo-title {
   word-break: keep-all;
   &.level1 {
@@ -13,4 +14,11 @@
       line-height: 40px;
     }
   }
+}
+
+/* Typo - text(문단) */
+.typo-text {
+  word-break: keep-all;
+  color: var(--color-gray-70);
+  line-height: 24px;
 }

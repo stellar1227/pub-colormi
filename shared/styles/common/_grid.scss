@@ -4,6 +4,11 @@
   flex-direction: row;
   gap: 8px;
 
+  /* 특정 자식 flex glow 처리 */
+  .grow {
+    flex-grow: 1;
+  }
+
   &.col {
     display: flex;
     flex-direction: column;

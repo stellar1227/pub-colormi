@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<!-- head.html 파일 포함 -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC</title>
+  <link rel="stylesheet" href="styles/pc.min.css" />
+</head>
+
+<body>
+  <div class="box-form-wrap">
+
+    <div class="grid-flex col wrap-heading">
+      <div>
+        <h1 class="typo-title level1 expanded1 align-center">비밀번호 찾기</h1>
+      </div>
+      <div>
+        <p class="typo-text">가입시 등록된 정보로 본인인증을 통해 찾으실 수 있습니다.</p>
+      </div>
+    </div>
+
+    <ul class="table-vertical">
+      <li>
+        <div class="th-label">비밀번호 재설정</div>
+        <div class="form-field small">
+          <input type="password" class="input-field" placeholder="영문 숫자 특수문자 8-16자" />
+
+        </div>
+
+      </li>
+      <li>
+        <div class="th-label">비밀번호 확인</div>
+        <div class="form-field small">
+          <input type="password" class="input-field" placeholder="비밀번호를 한번 더 입력해 주세요" />
+
+        </div>
+
+      </li>
+
+      <!-- [D] 예제) - input 유효성검증 예시입니다. 개발시 참고 후 삭제해주세요.(S) -->
+      <li style="display: block;">
+        <div class="th-label">비밀번호 확인</div>
+        <div class="form-field small error">
+          <input type="tel" class="input-field" />
+          <p class="description">입력한 비밀번호와 다릅니다</p>
+        </div>
+
+      </li>
+      <!-- [D] 예제) - input 유효성검증 예시입니다. 개발시 참고 후 삭제해주세요.(E) -->
+    </ul>
+
+    <button class="button primary large full-width">
+      비밀번호 재설정
+    </button>
+
+  </div>
+</body>
+
+</html>

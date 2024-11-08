@@ -1,0 +1,17 @@
+/* 회원 - 컨텐츠 Wrap 공통 (W 340) */
+.box-form-wrap {
+  padding: 120px 0;
+  margin: auto;
+  max-width: 340px;
+
+  .wrap-heading {
+    margin-bottom: 40px;
+  }
+
+  .box-info {
+    padding: 16px;
+    margin: 20px 0;
+    border: 1px solid var(--color-gray-20);
+    text-align: center;
+  }
+}
