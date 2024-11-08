@@ -1,0 +1,15 @@
+.grid-flex {
+  /* dft: flex + row */
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+  &.col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+}

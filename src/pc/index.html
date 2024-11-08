@@ -83,8 +83,149 @@
       @@loop('atomic/textInput.html', [
         { "type": "text", "placeholder": "이름을 입력해주세요", "desc": "제대로 이름을 입력해주세요", "width" : "450px", "disabled": true},
       ])
+
+      <hr style="margin: 40px 0">
+
+      <h1 style="font-size:2rem">Button 샘플</h1>
+      <ul>
+        <li><b>너비</b>
+          <ul>
+            <li>- 기본너비: 디자인가이드상 좌우여백만 부여되고 컨텐츠에 따라 늘어남.</li>
+            <li>- fullWidth: 부여시 부모 상속 100%</li>
+            <li>- width: 단위까지 추가하여 기입하면 css width에 그대로 주입</li>
+          </ul>
+        </li>
+        <li><b>size</b>
+          <ul>
+            <li>- medium: 기본. 사이즈 생략. font-size 14, line-height 22.4</li>
+            <li>- xlarge: font-size 17</li>
+            <li>- large: font-size 14, line-height 22.4</li>
+            <li>- small: font-size: 12</li>
+          </ul>
+        </li>
+      </ul>
       <br />
-    </div>
+      @@loop('atomic/button.html', [
+        { "type": "primary", "size": "xlarge", "text": "Button"},
+        { "type": "primary", "size": "large", "text": "Button" },
+        { "type": "primary", "text": "Button" },
+        { "type": "primary", "size": "small", "text": "Button" },
+      ])
+      <br />
+      @@loop('atomic/button.html', [
+        { "type": "highlight", "size": "xlarge", "text": "Button"},
+        { "type": "highlight", "size": "large", "text": "Button" },
+        { "type": "highlight", "text": "Button" },
+        { "type": "highlight", "size": "small", "text": "Button" },
+      ])
+      <br />
+      @@loop('atomic/button.html', [
+        { "type": "outlined", "size": "xlarge", "text": "Button"},
+        { "type": "outlined", "size": "large", "text": "Button" },
+        { "type": "outlined", "text": "Button" },
+        { "type": "outlined", "size": "small", "text": "Button" },
+      ])
+      <br />
+      @@loop('atomic/button.html', [
+        { "type": "secondary", "size": "xlarge", "text": "Button"},
+        { "type": "secondary", "size": "large", "text": "Button" },
+        { "type": "secondary", "text": "Button" },
+        { "type": "secondary", "size": "small", "text": "Button" },
+      ])
+
+      <br />
+      <!-- disabled -->
+      @@loop('atomic/button.html', [
+        { "type": "primary", "size": "xlarge", "text": "Disabled", "disabled": true},
+        { "type": "highlight", "size": "large", "text": "Disabled", "disabled": true },
+        { "type": "outlined", "text": "Disabled", "disabled": true },
+        { "type": "secondary", "size": "small", "text": "Disabled", "disabled": true },
+      ])
+      <br />
+
+      <!-- 100% -->
+      @@include('atomic/button.html', { 
+        "type": "primary", "size": "xlarge", "text": "Button", 
+        fullWidth: true 
+      })
+
+      <!-- width -->
+      @@include('atomic/button.html', { 
+        "type": "outlined", "size": "xlarge", "text": "Button", 
+        width: "300px"
+      })
+
+      <hr style="margin: 40px 0">
+      
+      <h1 style="font-size:2rem">Grid(flex)</h1>
+      <ul>
+        <li>- gap: (dft)8px (다른 여백 필요한 경우 합성 class 추가하거나, page 클래스로 선언해서 사용하세요.)</li>
+        <li>- col: (class) 세로방향 flex</li>
+        <li>- inline: (class) inline-flex 처리</li>
+      </ul>
+      
+      <div class="grid-flex">
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "primary", "size": "xlarge", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "highlight", "size": "large", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+      </div>
+
+      <!-- inline flex -->
+      <div class="grid-flex inline">
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "primary", "size": "xlarge", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "highlight", "size": "large", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+      </div>
+    
+      <!-- flex - col -->
+      <div class="grid-flex col">
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "primary", "size": "xlarge", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "highlight", "size": "large", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+      </div>
+      
+      <!-- flex - col + inline -->
+      <div class="grid-flex col inline">
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "primary", "size": "xlarge", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+        <div>
+          @@include('atomic/button.html', { 
+            "type": "highlight", "size": "large", "text": "Button", 
+            fullWidth: true 
+          })
+        </div>
+      </div>
     
   </body>
 </html>

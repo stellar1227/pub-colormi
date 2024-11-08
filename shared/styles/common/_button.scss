@@ -1,0 +1,85 @@
+/**
+.button
+&.xlarge
+&.large
+&.medium (default - medium 클래스 안써도 됨)
+&.small
+
+&:hover
+
+&.primary
+&.highlight
+&.outlined
+&.secondary
+*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* 공통 하단/우측 여백 */
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  /****** SIZE ******/
+  /* medium(dft) */
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+
+  &.xlarge {
+    padding: 16px 28px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 27.2px;
+  }
+
+  &.large {
+    padding: 13px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+
+  &.small {
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  /****** Type ******/
+  &.primary {
+    background-color: var(--color-gray-70);
+    color: #fff;
+  }
+  &.highlight {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  &.outlined {
+    box-shadow: inset 0 0 0 1px var(--color-gray-70);
+    color: var(--color-gray-100);
+  }
+  &.secondary {
+    background-color: var(--color-gray-20);
+    color: var(--color-gray-100);
+  }
+
+  /****** Disabled ******/
+  &:disabled {
+    background-color: var(--color-gray-20);
+    color: var(--color-gray-30);
+    box-shadow: none;
+    cursor: default;
+  }
+}

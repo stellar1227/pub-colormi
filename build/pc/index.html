@@ -141,8 +141,184 @@
       <p class="description">제대로 이름을 입력해주세요</p>
     </div>
 
+
+    <hr style="margin: 40px 0">
+
+    <h1 style="font-size:2rem">Button 샘플</h1>
+    <ul>
+      <li><b>너비</b>
+        <ul>
+          <li>- 기본너비: 디자인가이드상 좌우여백만 부여되고 컨텐츠에 따라 늘어남.</li>
+          <li>- fullWidth: 부여시 부모 상속 100%</li>
+          <li>- width: 단위까지 추가하여 기입하면 css width에 그대로 주입</li>
+        </ul>
+      </li>
+      <li><b>size</b>
+        <ul>
+          <li>- medium: 기본. 사이즈 생략. font-size 14, line-height 22.4</li>
+          <li>- xlarge: font-size 17</li>
+          <li>- large: font-size 14, line-height 22.4</li>
+          <li>- small: font-size: 12</li>
+        </ul>
+      </li>
+    </ul>
     <br />
-  </div>
+    <button class="button primary xlarge ">
+      Button
+    </button>
+    <button class="button primary large ">
+      Button
+    </button>
+    <button class="button primary  ">
+      Button
+    </button>
+    <button class="button primary small ">
+      Button
+    </button>
+
+    <br />
+    <button class="button highlight xlarge ">
+      Button
+    </button>
+    <button class="button highlight large ">
+      Button
+    </button>
+    <button class="button highlight  ">
+      Button
+    </button>
+    <button class="button highlight small ">
+      Button
+    </button>
+
+    <br />
+    <button class="button outlined xlarge ">
+      Button
+    </button>
+    <button class="button outlined large ">
+      Button
+    </button>
+    <button class="button outlined  ">
+      Button
+    </button>
+    <button class="button outlined small ">
+      Button
+    </button>
+
+    <br />
+    <button class="button secondary xlarge ">
+      Button
+    </button>
+    <button class="button secondary large ">
+      Button
+    </button>
+    <button class="button secondary  ">
+      Button
+    </button>
+    <button class="button secondary small ">
+      Button
+    </button>
+
+
+    <br />
+    <!-- disabled -->
+    <button class="button primary xlarge " disabled>
+      Disabled
+    </button>
+    <button class="button highlight large " disabled>
+      Disabled
+    </button>
+    <button class="button outlined  " disabled>
+      Disabled
+    </button>
+    <button class="button secondary small " disabled>
+      Disabled
+    </button>
+
+    <br />
+
+    <!-- 100% -->
+    <button class="button primary xlarge full-width">
+      Button
+    </button>
+
+
+    <!-- width -->
+    <button class="button outlined xlarge " style="width: 300px">
+      Button
+    </button>
+
+
+    <hr style="margin: 40px 0">
+
+    <h1 style="font-size:2rem">Grid(flex)</h1>
+    <ul>
+      <li>- gap: (dft)8px (다른 여백 필요한 경우 합성 class 추가하거나, page 클래스로 선언해서 사용하세요.)</li>
+      <li>- col: (class) 세로방향 flex</li>
+      <li>- inline: (class) inline-flex 처리</li>
+    </ul>
+
+    <div class="grid-flex">
+      <div>
+        <button class="button primary xlarge full-width">
+          Button
+        </button>
+
+      </div>
+      <div>
+        <button class="button highlight large full-width">
+          Button
+        </button>
+
+      </div>
+    </div>
+
+    <!-- inline flex -->
+    <div class="grid-flex inline">
+      <div>
+        <button class="button primary xlarge full-width">
+          Button
+        </button>
+
+      </div>
+      <div>
+        <button class="button highlight large full-width">
+          Button
+        </button>
+
+      </div>
+    </div>
+
+    <!-- flex - col -->
+    <div class="grid-flex col">
+      <div>
+        <button class="button primary xlarge full-width">
+          Button
+        </button>
+
+      </div>
+      <div>
+        <button class="button highlight large full-width">
+          Button
+        </button>
+
+      </div>
+    </div>
+
+    <!-- flex - col + inline -->
+    <div class="grid-flex col inline">
+      <div>
+        <button class="button primary xlarge full-width">
+          Button
+        </button>
+
+      </div>
+      <div>
+        <button class="button highlight large full-width">
+          Button
+        </button>
+
+      </div>
+    </div>
 
 </body>
 
