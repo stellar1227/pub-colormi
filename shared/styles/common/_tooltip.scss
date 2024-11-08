@@ -1,0 +1,60 @@
+.tooltip-box {
+  position: relative;
+
+  .tooltip-description {
+    display: none;
+    position: absolute;
+    padding: 6px;
+    white-space: nowrap;
+    max-width: 90vw;
+    font-size: 14px;
+    line-height: 16.71px;
+    border: 1px solid var(--color-gray-30);
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+    color: var(--color-gray-100);
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      border-bottom: 1px solid var(--color-gray-30);
+      border-right: 1px solid var(--color-gray-30);
+      transform: rotate(45deg) translate(-50%, 100%);
+    }
+  }
+
+  &:hover .tooltip-description,
+  &.open .tooltip-description {
+    display: block;
+  }
+
+  /* 위치 - Top(dft) */
+  .tooltip-description {
+    /* 위치 - 기본: TOP */
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: -5px;
+    transform: translateX(-50%);
+  }
+
+  /* 위치 - Bottom */
+  &.bottom .tooltip-description {
+    top: 100%;
+    bottom: auto;
+    // margin-top: 5px;
+    margin-bottom: 0;
+
+    &:after {
+      top: -2px;
+      bottom: auto;
+      border-width: 1px;
+      transform: rotate(-45deg) translate(-50%, -100%);
+    }
+  }
+}
