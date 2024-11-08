@@ -1,6 +1,8 @@
 <div class="form-field @@class">
-  <input type="@@type" class="input-field" placeholder="@@placeholder" data-width="@@width"
+  <input type="@@type" class="input-field"
     @@if (typeof disabled != 'undefined' && disabled) { disabled }
+    @@if (typeof placeholder != 'undefined' && placeholder) {placeholder="@@placeholder"}
+    @@if (typeof width != 'undefined' && width) {data-width="@@width"}
   />
-  <p class="description">@@desc</p>
+  @@if (typeof desc != 'undefined' && desc) {<p class="description">@@desc</p>}
 </div>

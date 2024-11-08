@@ -62,27 +62,27 @@
       <br />
 
       <h1 style="font-size:2rem">input Textfiled 샘플</h1>
-      <p>default가 100% 이므로 width속성 쓰지말고 wrapper에 사이즈 줘서 조절해도됨 </p>
+      <ul>
+        <li>- 기본: <b>높이 48</b></li>
+        <li>- small: (class) <b>높이 38</b></li>
+        <li>- default가 100% 이므로 width속성 쓰지말고 wrapper에 사이즈 줘서 조절해도됨</li>
+      </ul>
       <br />
       @@loop('atomic/textInput.html', [
         { "type": "text", "placeholder": "아이디 입력해주세요", "desc": "사용가능한 아이디입니다.", "width" : "450px" ,"class": "valid"},
-      ])
-      <br />
-
-      @@loop('atomic/textInput.html', [
         { "type": "text", "placeholder": "비밀번호를 입력해주세요", "desc": "비밀번호를 입력해주세요",  "width" : "450px" },
-      ])
-      <br />
-      <br />
-
-      @@loop('atomic/textInput.html', [
         { "type": "text", "placeholder": "이름을 입력해주세요", "desc": "제대로 이름을 입력해주세요", "width" : "450px", "class" : "error"},
-      ])
-      <br />
-
-      @@loop('atomic/textInput.html', [
         { "type": "text", "placeholder": "이름을 입력해주세요", "desc": "제대로 이름을 입력해주세요", "width" : "450px", "disabled": true},
       ])
+
+      @@loop('atomic/textInput.html', [
+        { "type": "text", "width": "450px" ,"class": "valid small"},
+        { "type": "text", "width": "450px", "class": "small"},
+        { "type": "text", "width": "450px", "class" : "error small"},
+        { "type": "text", "width": "450px", "disabled": true, "class": "small"},
+      ])
+      <br />
+
 
       <hr style="margin: 40px 0">
 
@@ -97,40 +97,40 @@
         </li>
         <li><b>size</b>
           <ul>
-            <li>- medium: 기본. 사이즈 생략. font-size 14, line-height 22.4</li>
-            <li>- xlarge: font-size 17</li>
-            <li>- large: font-size 14, line-height 22.4</li>
-            <li>- small: font-size: 12</li>
+            <li>- medium: <b>높이 38</b> / 기본. 사이즈 생략. font-size 14, line-height 22.4</li>
+            <li>- large: <b>높이 48</b> / font-size 14, line-height 22.4</li>
+            <li>- xlarge: <b>높이 59</b> / font-size 17</li>
+            <li>- small: <b>높이 28</b> / font-size: 12</li>
           </ul>
         </li>
       </ul>
       <br />
       @@loop('atomic/button.html', [
-        { "type": "primary", "size": "xlarge", "text": "Button"},
-        { "type": "primary", "size": "large", "text": "Button" },
-        { "type": "primary", "text": "Button" },
-        { "type": "primary", "size": "small", "text": "Button" },
+        { "type": "primary", "size": "xlarge", "text": "primary"},
+        { "type": "primary", "size": "large", "text": "primary" },
+        { "type": "primary", "text": "primary" },
+        { "type": "primary", "size": "small", "text": "primary" },
       ])
       <br />
       @@loop('atomic/button.html', [
-        { "type": "highlight", "size": "xlarge", "text": "Button"},
-        { "type": "highlight", "size": "large", "text": "Button" },
-        { "type": "highlight", "text": "Button" },
-        { "type": "highlight", "size": "small", "text": "Button" },
+        { "type": "highlight", "size": "xlarge", "text": "highlight"},
+        { "type": "highlight", "size": "large", "text": "highlight" },
+        { "type": "highlight", "text": "highlight" },
+        { "type": "highlight", "size": "small", "text": "highlight" },
       ])
       <br />
       @@loop('atomic/button.html', [
-        { "type": "outlined", "size": "xlarge", "text": "Button"},
-        { "type": "outlined", "size": "large", "text": "Button" },
-        { "type": "outlined", "text": "Button" },
-        { "type": "outlined", "size": "small", "text": "Button" },
+        { "type": "outlined", "size": "xlarge", "text": "outlined"},
+        { "type": "outlined", "size": "large", "text": "outlined" },
+        { "type": "outlined", "text": "outlined" },
+        { "type": "outlined", "size": "small", "text": "outlined" },
       ])
       <br />
       @@loop('atomic/button.html', [
-        { "type": "secondary", "size": "xlarge", "text": "Button"},
-        { "type": "secondary", "size": "large", "text": "Button" },
-        { "type": "secondary", "text": "Button" },
-        { "type": "secondary", "size": "small", "text": "Button" },
+        { "type": "secondary", "size": "xlarge", "text": "secondary"},
+        { "type": "secondary", "size": "large", "text": "secondary" },
+        { "type": "secondary", "text": "secondary" },
+        { "type": "secondary", "size": "small", "text": "secondary" },
       ])
 
       <br />
@@ -254,6 +254,13 @@
       <h1 class="typo-title level1 expanded2 align-center" style="width: 300px;">프린팅 플랫폼 서비스를 직접 경험해보세요</h1>
     
       <hr style="margin: 30px 0">
+
+      <h1>Select</h1>
+      <select name="" id="" class="form-select">
+        <option value="">안녕하세요</option>
+        <option value="">안녕하세요2</option>
+        <option value="">안녕하세요3</option>
+      </select>
     
     </div>
   </body>
