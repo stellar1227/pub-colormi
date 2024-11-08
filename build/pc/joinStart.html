@@ -16,9 +16,19 @@
     <div class="start-section">
       <h1 class="typo-title level1 expanded1 align-center">printing platform 서비스를<br />직접 경험해보세요</h1>
       <div class="section-buttons">
-        <button class="button outlined large full-width">
-          개인 회원 가입
-        </button>
+        <!-- [D]
+                툴팁 기본 동작: tooltip-box 에 hover시 tooltip-description 노출.
+                ㄴ 동적 열림 처리: tooltip-box - open 클래스 추가. <div class="tooltip-box open">
+                ㄴ 동적 닫힘 처리: tooltip-box - open 클래스 제거. <div class="tooltip-box">
+              -->
+        <div class="tooltip-box">
+          <span class="tooltip-description">사업자가 아닌 개인 구매자는 개인회원으로 가입해주세요</span>
+
+          <button class="button outlined large full-width">
+            개인 회원 가입
+          </button>
+
+        </div>
 
         <button class="button primary large full-width">
           사업자 회원 가입
