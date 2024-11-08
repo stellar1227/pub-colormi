@@ -24,8 +24,8 @@
 
     /* label 내 실제 텍스트 - 상하 정렬용 element(디자인 폰트 디센/어센더 맞춤용) */
     > i {
-      /* FIXME: 디자인폰트 적용 후 수정 필요*/
       display: inline-block;
+      /* FIXME: 디자인폰트 적용 후 수정 필요*/
       padding-top: 2px;
       vertical-align: middle;
     }

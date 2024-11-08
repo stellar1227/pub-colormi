@@ -162,7 +162,9 @@
         <li>- gap: (dft)8px (다른 여백 필요한 경우 합성 class 추가하거나, page 클래스로 선언해서 사용하세요.)</li>
         <li>- col: (class) 세로방향 flex</li>
         <li>- inline: (class) inline-flex 처리</li>
+        <li>- gap-radio: (class) checkbox, radio 공통 gap 처리</li>
       </ul>
+      <br>
       
       <div class="grid-flex">
         <div>
@@ -226,6 +228,18 @@
           })
         </div>
       </div>
+
+      <!-- Radio + Grid (radio+checkbox 동일 클래스 사용.) -->
+      <div class="grid-flex gap-radio">
+        <div>
+          @@include('atomic/radio.html', { "label": "곰돌이", "name": "pet44", "checked": true })
+        </div>
+        <div>
+          @@include('atomic/radio.html', { "label": "호랭이", "name": "pet44" })
+        </div>
+      </div>
+
+
     
   </body>
 </html>
