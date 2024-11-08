@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <!-- head.html 파일 포함 -->
+  @@include('head-pc.html')
+
+  <body>
+    <div class="join-wrap wrap">
+        <div class="start-bg"></div>
+        <div class="start-section">
+          <h1 class="typo-title level1 expanded1 align-center" >printing platform 서비스를<br/>직접 경험해보세요</h1>
+            <div class="section-buttons">
+              @@include('atomic/button.html', { 
+                "type": "outlined", "size": "large", "text": "개인 회원 가입", 
+                fullWidth: true 
+              })
+              @@include('atomic/button.html', { 
+                "type": "primary", "size": "large", "text": "사업자 회원 가입", 
+                fullWidth: true 
+              })
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
