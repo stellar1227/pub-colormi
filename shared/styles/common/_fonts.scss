@@ -1,0 +1,13 @@
+//mixin
+@mixin fontFace($filename, $weight) {
+  @font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: $weight;
+    src: local('#{$filename}'), local('#{$filename}'), local('#{$filename}');
+    src: url('/fonts/#{$filename}.woff2') format('woff2');
+  }
+}
+
+@include fontFace('Pretendard-Regular', 400);
+@include fontFace('Pretendard-Bold', 600);
