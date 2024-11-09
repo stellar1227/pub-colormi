@@ -2,7 +2,7 @@
   <input type="@@type" class="input-field"
     @@if (typeof disabled != 'undefined' && disabled) { disabled }
     @@if (typeof placeholder != 'undefined' && placeholder) {placeholder="@@placeholder"}
-    @@if (typeof width != 'undefined' && width) {data-width="@@width"}
+    @@if (typeof width != 'undefined' && width) {style="width:@@width"}
   />
   @@if (typeof desc != 'undefined' && desc) {<p class="description">@@desc</p>}
 </div>
