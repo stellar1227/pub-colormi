@@ -1,5 +1,6 @@
 .join-wrap {
-  //회원가입 스텝
+  padding-bottom: 40px;
+  /** 회원가입 스텝**/
   .step-container {
     display: flex;
     align-items: center;
@@ -67,23 +68,52 @@
       }
     }
   }
-  //회원가입 박스
-  .join-box {
-    width: 590px;
-    margin: 0 auto;
+  /** 회원가입 타이틀 **/
+  .join-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title-dec {
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.71px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      color: #8b95a1;
+      &::before {
+        content: '✓ ';
+        color: #cf2027;
+      }
+    }
   }
-  //회원가입 선택 박스
+
+  .join-results {
+    & > li {
+      text-align: center;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: center;
+      color: #3c3c47;
+      &.bold {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/**회원관리**/
+.join-start {
+  /** 회원가입 선택 박스**/
   .start-section {
     padding: 220px 0 0;
     button {
       margin-bottom: 8px;
     }
-  }
-  //회원가입 완료
-  .end-section {
-    padding: 220px 0 0;
-    width: 340px;
-    margin: 0 auto;
   }
   .section-title {
     font-family: 'Pretendard';
@@ -99,5 +129,100 @@
   .section-buttons {
     width: 340px;
     margin: 40px auto;
+  }
+}
+
+/** 개인회원가입 - 약관동의 **/
+.join-step1 {
+  padding-top: 80px;
+  width: 590px;
+  margin: 0 auto;
+
+  .typo-title {
+    padding: 40px 0 30px;
+  }
+
+  .agreed-term {
+    li {
+      padding-top: 2px;
+    }
+    .agreed-term {
+      padding-left: 28px;
+    }
+  }
+  .section-buttons {
+    padding-top: 40px;
+  }
+}
+
+/** 정보입력 **/
+.join-step2 {
+  padding-top: 80px;
+  width: 590px;
+  margin: 0 auto;
+
+  .join-title {
+    padding-top: 40px;
+  }
+  .section-buttons > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/** 가입 완료  **/
+.join-step3 {
+  .completed-title {
+    text-align: center;
+    p {
+      padding-top: 8px;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+  }
+  .completed-message {
+    padding-top: 60px;
+    text-align: center;
+    .message-dec {
+      font-family: Pretendard;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+    .message-links {
+      padding-top: 8px;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: center;
+      & > a {
+        position: relative;
+        padding: 0 10px;
+        color: #29292a;
+        text-decoration: underline;
+        &::before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: calc(50% - 2px);
+          width: 1px;
+          height: 1px;
+          border-radius: 50%;
+          background: #29292a;
+        }
+        &:first-of-type::before {
+          display: none;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,104 @@
+.form-table {
+  border-bottom: 1px solid #e5e8eb;
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    &:last-of-type {
+      padding-bottom: 40px;
+    }
+    &:first-of-type {
+      padding-top: 40px;
+    }
+
+    &.required {
+      .label-container::before {
+        content: '✓';
+        color: #cf2027;
+      }
+    }
+  }
+
+  .label-container {
+    width: 160px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #29292a;
+  }
+  .input-container {
+    flex: 1;
+  }
+  .input-container-info {
+    padding: 8px 0;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.4px;
+    letter-spacing: -0.01em;
+    text-align: left;
+  }
+
+  .input-group {
+    flex: 1;
+  }
+  .button-wrapper {
+    &[data-width='65px'] {
+      width: 65px;
+    }
+    &[data-width='104px'] {
+      width: 104px;
+    }
+    &[data-width='119px'] {
+      width: 119px;
+    }
+    .button {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  .address-dec {
+    padding-top: 8px;
+  }
+
+  .input-dec-password {
+    padding-top: 10px;
+    & > span {
+      color: #29292a;
+      font-family: Pretendard;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      padding-right: 8px;
+      &::before {
+        content: '✓ ';
+      }
+
+      &.pass {
+        color: #32b478;
+      }
+      &.error {
+        color: #cf2027;
+      }
+    }
+  }
+
+  .underline {
+    .form-checkbox .label > i {
+      text-decoration: underline;
+    }
+  }
+}
