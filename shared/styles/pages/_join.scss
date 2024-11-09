@@ -1,96 +1,103 @@
-.join-wrap .step-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  width: 590px;
-  margin: 0 auto;
-
-  .step-item {
-    position: relative;
+.join-wrap {
+  //회원가입 스텝
+  .step-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 45px;
-    z-index: 2;
-    color: #b0b8c1;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto 40px;
+    padding-top: 80px;
+    width: 590px;
+    .step-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      z-index: 2;
+      color: #b0b8c1;
 
-    font-family: Pretendard;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 15.51px;
-    letter-spacing: -0.01em;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
-    &:not(:first-child)::before {
-      content: '';
-      position: absolute;
-      top: 18px;
-      left: -223px;
-      width: 217.5px;
-      height: 2px;
-      background-color: lightgray;
-      z-index: 1;
-    }
-
-    .step-number {
-      width: 36px;
-      height: 36px;
-      line-height: 36px;
-      margin-bottom: 8px;
-      border-radius: 50%;
-      background-color: #b0b8c1;
       font-family: Pretendard;
-      font-size: 17px;
-      font-weight: 400;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 15.51px;
       letter-spacing: -0.01em;
       text-align: center;
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
-      color: #fff;
-    }
 
-    &.active {
-      color: #29292a;
-      .step-number {
-        background-color: #29292a;
+      &:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        top: 18px;
+        left: -223px;
+        width: 217.5px;
+        height: 2px;
+        background-color: lightgray;
+        z-index: 1;
       }
 
-      &::before {
-        background-color: #29292a;
+      .step-number {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        margin-bottom: 8px;
+        border-radius: 50%;
+        background-color: #b0b8c1;
+        font-family: Pretendard;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #fff;
+      }
+
+      &.active {
+        color: #29292a;
+        .step-number {
+          background-color: #29292a;
+        }
+
+        &::before {
+          background-color: #29292a;
+        }
       }
     }
   }
+  //회원가입 박스
+  .join-box {
+    width: 590px;
+    margin: 0 auto;
+  }
+  //회원가입 선택 박스
+  .start-section {
+    padding: 220px 0 0;
+    button {
+      margin-bottom: 8px;
+    }
+  }
+  //회원가입 완료
+  .end-section {
+    padding: 220px 0 0;
+    width: 340px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-family: 'Pretendard';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-align: center;
+  }
+  .section-buttons {
+    width: 340px;
+    margin: 40px auto;
+  }
 }
-
-/** **/
-.join-wrap .start-bg {
-  height: 300px;
-  background: #d9d9d9;
-}
-
-.join-wrap .start-section {
-  padding: 40px 0 0;
-}
-
-.join-wrap .section-title {
-  font-family: Pretendard;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: -0.01em;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  text-align: center;
-}
-
-.join-wrap .section-buttons {
-  width: 340px;
-  margin: 40px auto;
-}
-
-/** **/

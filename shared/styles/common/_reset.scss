@@ -4,11 +4,10 @@ html {
   background-color: #fff;
   color: var(--color-gray-100);
 
-  /* FIXME: 디자인 폰트 수급 후 교체 필요*/
-  font-family: '-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue" ,Arial, sans-serif';
+  font-family: 'Pretendard';
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.57;
+  line-height: 22px;
   letter-spacing: -1%;
 }
 
@@ -142,7 +141,7 @@ address {
 #skipnavi {
   position: absolute;
   left: 0;
-  top: -30px;
+  top: -300px;
 }
 
 input[type='text'],

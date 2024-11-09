@@ -1,7 +1,7 @@
 //mixin
 @mixin fontFace($filename, $weight) {
   @font-face {
-    font-family: 'Noto Sans';
+    font-family: 'Pretendard';
     font-style: normal;
     font-weight: $weight;
     src: local('#{$filename}'), local('#{$filename}'), local('#{$filename}');

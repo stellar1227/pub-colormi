@@ -1,48 +1,51 @@
 <!doctype html>
 <html lang="ko">
   <!-- head.html 파일 포함 -->
-  @@include('head-pc.html')
+  @@include('head-pc.html', {title: "개인회원가입 - 약관동의 - 칼라미"})
   <body>
-    <div class="join-wrap wrap">
-      <ol class="step-container">
-        @@loop('pages/join/step.html', [
-          { index:1, "active": true, "text": "약관동의" },
-          { index:2, "active": false, "text": "정보입력" },
-          { index:3, "active": false, "text": "가입완료" }
-        ])
-      </ol>
-
-
-      
-
-      <div class="">
-        <h2 class="">약관동의</h2>
+    <div id="wrap">
+      <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
       </div>
-      <ul class="">
-        <li>
-          @@loop('atomic/checkbox.html', [
-            { "label": "만 14세 이상입니다.", "name": "term1", "checked": true },
-          ])
-        </li>
-        <li>
-          @@loop('atomic/checkbox.html', [
-            { "label": "칼라미 이용약관에 모두 동의 합니다.", "name": "term2"},
-          ])
-          <ul>
-            <li>
-              @@loop('atomic/checkbox.html', [
-                { "label": "칼라미 이용약관 동의(필수)", "name": "term3", },
-              ])
-            </li>
-            <li>
-              @@loop('atomic/checkbox.html', [
-                { "label": "개인정보 수집 및 이용 동의(필수)", "name": "term4" },
-              ])
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <button>휴대폰 인증</button>
+      <div class="join-wrap" id="container">
+        <div id="content">
+          <ol class="step-container">
+            @@loop('pages/join/step.html', [
+              { index:1, "active": true, "text": "약관동의" },
+              { index:2, "active": false, "text": "정보입력" },
+              { index:3, "active": false, "text": "가입완료" }
+            ])
+          </ol>
+          <div class="join-box">
+            <h2 class="">약관동의</h2>
+            <ul class="">
+              <li>
+                @@loop('atomic/checkbox.html', [
+                  { "label": "만 14세 이상입니다.", "name": "term1", "checked": true },
+                ])
+              </li>
+              <li>
+                @@loop('atomic/checkbox.html', [
+                  { "label": "칼라미 이용약관에 모두 동의 합니다.", "name": "term2"},
+                ])
+                <ul>
+                  <li>
+                    @@loop('atomic/checkbox.html', [
+                      { "label": "칼라미 이용약관 동의(필수)", "name": "term3", },
+                    ])
+                  </li>
+                  <li>
+                    @@loop('atomic/checkbox.html', [
+                      { "label": "개인정보 수집 및 이용 동의(필수)", "name": "term4" },
+                    ])
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <button>휴대폰 인증</button>
+        </div>
+      </div>
     </div>
+    
   </body>
 </html>
