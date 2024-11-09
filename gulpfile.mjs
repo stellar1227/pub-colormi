@@ -27,8 +27,12 @@ const paths = {
     },
   },
   scripts: {
-    src: 'shared/scripts/**/*.js',
+    src: ['shared/scripts/**/*.js', '!shared/scripts/sweetalert2.all.min.js'], // Excludes 'sweetalert2.all.min.js' from concat
     dest: 'build/scripts/',
+    copy: [
+      'shared/scripts/sweetalert2.all.min.js',
+      'shared/scripts/jquery-3.7.1.min.js',
+    ], // Paths for copying
   },
   html: {
     index: {
@@ -112,6 +116,9 @@ export const scripts = () =>
     .pipe(dest(paths.scripts.dest))
     .pipe(bs.stream())
 
+export const copyScripts = () =>
+  src(paths.scripts.copy).pipe(dest(paths.scripts.dest))
+
 export const htmlIndex = () =>
   src(paths.html.index.src).pipe(dest(paths.html.index.dest)).pipe(bs.stream())
 
@@ -138,6 +145,7 @@ const build = gulp.series(
     stylesMO,
     stylesPC,
     scripts,
+    copyScripts, // Ensures the copy step runs
     htmlIndex,
     htmlPC,
     htmlMO,

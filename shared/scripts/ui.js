@@ -1,0 +1,62 @@
+// ui.js
+
+/**
+ * @description SweetAlert2를 이용한 메시지 공통 클래스
+ * @see https://sweetalert2.github.io/#usage
+ * @params {Object} options - SweetAlert2 options (위 링크 참조)
+ * @returns {Promise}
+ */
+class Message {
+  static show(options) {
+    if (!window.Swal) {
+      console.error('SweetAlert2가 선언되지 않았습니다.')
+      return
+    }
+
+    const {
+      confirmButtonText = '확인',
+      cancelButtonText = '취소',
+      denyButtonText = '거부',
+      onConfirm,
+      onCancel,
+      onDenied,
+    } = options || {}
+
+    // 취소, 거부 버튼 표시 여부
+    const showCancelButton = Boolean(options?.cancelButtonText)
+    const showDenyButton = Boolean(options?.denyButtonText)
+
+    return window.Swal.fire({
+      ...options,
+      showCancelButton,
+      showDenyButton,
+      confirmButtonText,
+      cancelButtonText,
+      denyButtonText,
+    }).then((result) => {
+      const isConfirmed = result?.isConfirmed
+      const isDenied = result?.isDenied
+      const isDismissed = result?.isDismissed
+
+      // '확인' (confirm) 클릭
+      if (isConfirmed) {
+        onConfirm?.()
+        return
+      }
+
+      // '거부' (deny) 클릭
+      if (isDenied) {
+        onDenied?.()
+        return
+      }
+
+      // '취소' (dismiss) 클릭
+      if (isDismissed) {
+        onCancel?.()
+        return
+      }
+    })
+  }
+}
+
+window.Message = Message

@@ -1,0 +1,57 @@
+/* 
+@see https://sweetalert2.github.io/
+*/
+.swal2-container {
+  /* Modal (모달 영역) */
+  .swal2-popup {
+    padding-bottom: 0;
+  }
+
+  /* Title */
+  .swal2-title {
+    padding: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  /* Actions (버튼 영역) */
+  .swal2-actions {
+    width: 100%;
+    margin-top: 0;
+    border-top: 1px solid var(--color-gray-20);
+
+    button {
+      flex: 1;
+      margin: 0;
+      font-size: 16px;
+      line-height: 22px;
+      border-radius-top-left: 0;
+      border-radius-top-right: 0;
+      background-color: #fff;
+      color: var(--color-gray-100);
+
+      & + button {
+        border-left: 1px solid var(--color-gray-20);
+      }
+
+      &:hover {
+        background: #fff !important;
+      }
+    }
+  }
+}
+
+/* Dimmed */
+div:where(.swal2-container).swal2-backdrop-show,
+div:where(.swal2-container).swal2-noanimation {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Show(open) */
+div:where(.swal2-container) div:where(.swal2-popup) {
+  width: auto !important;
+  min-width: 270px;
+  max-width: 90vh;
+}

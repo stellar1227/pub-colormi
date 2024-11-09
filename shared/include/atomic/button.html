@@ -2,6 +2,7 @@
     class="button @@if (typeof type != 'undefined' && type) {@@type} @@if (typeof size != 'undefined' && size) {@@size} @@if (typeof fullWidth != 'undefined' && fullWidth) {full-width}"
     @@if (typeof width != 'undefined' && width) {style="width: @@width"}
     @@if (typeof disabled != 'undefined' && disabled) {disabled}
+    @@if (typeof id != 'undefined' && id) {id="@@id"}
   >
   @@if (typeof text != 'undefined') { @@text }
 </button>

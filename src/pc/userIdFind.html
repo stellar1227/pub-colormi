@@ -79,9 +79,19 @@
       </ul>
 
       @@include('atomic/button.html', { 
-        "type": "primary", "size": "large", "text": "아이디 확인", 
-        fullWidth: true 
+        type: "primary", size: "large", text: "아이디 확인", 
+        fullWidth: true,
+        id: 'btn-id-find'
       })
     </div>
+
+    <script>
+      // 비밀번호 재설정 버튼 클릭
+      $('#btn-id-find').on('click', () => {
+         Message.show({
+          title: '등록된 정보가 없습니다.<br />입력하신 정보를 다시 확인해 주세요.',
+        });
+      })
+    </script>
   </body>
 </html>

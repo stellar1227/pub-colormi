@@ -33,9 +33,24 @@
       </ul>
 
       @@include('atomic/button.html', { 
-        "type": "primary", "size": "large", "text": "비밀번호 재설정", 
-        fullWidth: true 
+        type: "primary", size: "large", text: "비밀번호 재설정", 
+        fullWidth: true,
+        id: "btn-pw-reset" 
       })
     </div>
+
+    <script>
+      // 비밀번호 재설정 버튼 클릭
+      $('#btn-pw-reset').on('click', () => {
+         Message.show({
+          title: '비밀번호가 정상적으로<br />등록되었습니다.',
+          confirmButtonText: '로그인하기',
+          onConfirm: () => {
+            // 로그인 페이지로 이동
+            location.href = '/pc/login.html';
+          }
+        });
+      })
+    </script>
   </body>
 </html>

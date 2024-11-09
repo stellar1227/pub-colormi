@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>비밀번호 찾기 - 칼라미</title>
   <link rel="stylesheet" href="styles/pc.min.css" />
+  <script src="../scripts/jquery-3.7.1.min.js"></script>
+  <script src="../scripts/sweetalert2.all.min.js"></script>
+  <script src="../scripts/ui.js"></script>
 </head>
 
 
@@ -51,11 +54,25 @@
       <!-- [D] 예제) - input 유효성검증 예시입니다. 개발시 참고 후 삭제해주세요.(E) -->
     </ul>
 
-    <button class="button primary large full-width">
+    <button class="button primary large full-width" id="btn-pw-reset">
       비밀번호 재설정
     </button>
 
   </div>
+
+  <script>
+    // 비밀번호 재설정 버튼 클릭
+    $('#btn-pw-reset').on('click', () => {
+      Message.show({
+        title: '비밀번호가 정상적으로<br />등록되었습니다.',
+        confirmButtonText: '로그인하기',
+        onConfirm: () => {
+          // 로그인 페이지로 이동
+          location.href = '/pc/login.html';
+        }
+      });
+    })
+  </script>
 </body>
 
 </html>
