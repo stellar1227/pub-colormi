@@ -1,0 +1,18 @@
+.form-field.form-file {
+  label.input-field{
+    display: block;
+    background: 0 0;
+    box-shadow: inset 0 0 0 1px var(--color-gray-20);
+    padding: 0 16px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--color-gray-50);
+    line-height: 38px;
+  }
+
+  &.large {
+    label.input-field{
+      line-height: 48px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="form-field form-file @@class @@if (typeof disabled != 'undefined' && disabled) { disabled }">
+  <input type="file" id="@@id" hidden />
+  <label 
+    for="@@id" 
+    class="input-field" 
+    @@if (typeof width != 'undefined' && width) {style="width:@@width"}
+  >파일 선택</label>
+  @@if (typeof desc != 'undefined' && desc) {<p class="description">@@desc</p>}
+</div>

@@ -11,10 +11,10 @@
 }
 .form-select {
   position: relative;
-  display: inline-block;
+  width: 100%;
   select {
     width: 100%;
-    padding: 8px 34px 8px 10px;
+    padding: 7px 34px 7px 10px;
     font-size: 14px;
     line-height: 22px;
     border: 1px solid var(--color-gray-20);

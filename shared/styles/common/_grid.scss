@@ -18,6 +18,12 @@
     display: inline-flex;
   }
 
+  &.grow-equal {
+    & > div {
+      flex: 1;
+    }
+  }
+
   /***** Gap Type *****/
   &.gap-radio {
     /* checkbox도 같은 클래스명으로 사용합니다. (상하여백은 임의 설정함.) */

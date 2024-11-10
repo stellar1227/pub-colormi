@@ -108,9 +108,13 @@
 
 /**회원관리**/
 .join-start {
+  .start-bg {
+    height: 300px;
+    background: #d9d9d9;
+  }
   /** 회원가입 선택 박스**/
   .start-section {
-    padding: 220px 0 0;
+    padding-top: 40px;
     button {
       margin-bottom: 8px;
     }
@@ -136,10 +140,9 @@
 .join-step1 {
   padding-top: 80px;
   width: 590px;
-  margin: 0 auto;
 
   .typo-title {
-    padding: 40px 0 30px;
+    padding: 0 0 30px;
   }
 
   .agreed-term {

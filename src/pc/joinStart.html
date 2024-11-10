@@ -10,35 +10,39 @@
       </div>
       <!-- header.html 파일 들어갈 자리 -->
       <div class="join-wrap" id="container">
-          <div id="content" class="join-start">
-            <div class="start-section">
-              <h1 class="typo-title level1 expanded1 align-center" >printing platform 서비스를<br/>직접 경험해보세요</h1>
-                <div class="section-buttons">
-                  <!-- [D]
+        <div id="content" class="join-start">
+          <div class="start-bg"></div>
+          <div class="start-section">
+            <h1 class="typo-title level1 expanded1 align-center">
+              printing platform 서비스를<br />직접 경험해보세요
+            </h1>
+            <div class="section-buttons">
+              <!-- [D]
                     툴팁 기본 동작: tooltip-box 에 hover시 tooltip-description 노출.
                     ㄴ 동적 열림 처리: tooltip-box - open 클래스 추가. <div class="tooltip-box open">
                     ㄴ 동적 닫힘 처리: tooltip-box - open 클래스 제거. <div class="tooltip-box">
                   -->
-                  <div class="tooltip-box">
-                    <span class="tooltip-description">사업자가 아닌 개인 구매자는 개인회원으로 가입해주세요</span>
-    
-                    @@include('atomic/button.html', { 
-                      "type": "outlined", "size": "large", "text": "개인 회원 가입", 
-                      fullWidth: true 
-                    })
-                  </div>
-    
-                  <div class="tooltip-box">
-                    <span class="tooltip-description">개인/법인 사업체 운영중이라면 사업자회원으로 가입해 주세요.</span>
-    
-                    @@include('atomic/button.html', { 
-                      "type": "primary", "size": "large", "text": "사업자 회원 가입", 
-                      fullWidth: true 
-                    })
-                  </div>
-                </div>
+              <div class="tooltip-box">
+                <span class="tooltip-description"
+                  >사업자가 아닌 개인 구매자는 개인회원으로 가입해주세요</span
+                >
+
+                @@include('atomic/button.html', { "type": "outlined", "size":
+                "large", "text": "개인 회원 가입", fullWidth: true })
+              </div>
+
+              <div class="tooltip-box">
+                <span class="tooltip-description"
+                  >개인/법인 사업체 운영중이라면 사업자회원으로 가입해
+                  주세요.</span
+                >
+
+                @@include('atomic/button.html', { "type": "primary", "size":
+                "large", "text": "사업자 회원 가입", fullWidth: true })
+              </div>
             </div>
           </div>
+        </div>
       </div>
       <!-- footer.html 파일 들어갈 자리 -->
     </div>
