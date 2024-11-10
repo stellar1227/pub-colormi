@@ -80,7 +80,7 @@
     <h1 id="title">칼라미 template list</h1>
     <dl class="info">
         <dt>작성자</dt>
-        <dd id="info">lee mijin / finenuts</dd>
+        <dd id="info">lee mijin </dd>
     </dl>
     <table  id="templateList">
         <thead>
@@ -90,7 +90,8 @@
                 <th scope="col">depth2</th>
                 <th scope="col">depth3</th>
                 <th scope="col">name</th>
-                <th scope="col">url</th>
+                <th scope="col">PcUrl</th>
+                <th scope="col">MoUrl</th>
                 <th scope="col">status</th>
                 <th scope="col">description</th>
             </tr>
@@ -100,7 +101,7 @@
             <tr>
                 <td colspan="4">style guide</td>
                 <td class="name">index.html</td>
-                <td class="url">guide/index.html</td>
+                <td class="url" colspan="2">guide/index.html</td>
                 <td class="status">
                     <span class="ing">작업중</span>
                 </td>
@@ -115,6 +116,7 @@
                 <td colspan="4">PC include code Temp</td>
                 <td class="name">index.html</td>
                 <td class="url">pc/index.html</td>
+                <td class="url">mo/index.html</td>
                 <td class="status">
                   <span class="ing">작업중</span>
                 </td>
@@ -125,20 +127,6 @@
                     <p class="log">2024-11-04 생성</p>
                 </td>
             </tr>
-            <tr>
-              <td colspan="4">Mo include code Temp</td>
-              <td class="name">index.html</td>
-              <td class="url">mo/index.html</td>
-              <td class="status">
-                <span class="ing">작업중</span>
-              </td>
-              <td>
-                  <div class="desc_box">
-                    gulp include 코드
-                  </div>                    
-                  <p class="log">2024-11-04 생성</p>
-              </td>
-          </tr>
             <!-- 회원 프로세스 -->
             <tr>
                 <th scope="row" rowspan="10">회원관리</th>
@@ -147,6 +135,7 @@
                 <td>개인회원/사업자구분</td>
                 <td class="name">joinStart.html</td>
                 <td class="url">pc/joinStart.html</td>
+                <td class="url">mo/joinStart.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -158,6 +147,7 @@
                 <td>개인회원가입 - 약관동의</td>
                 <td class="name">joinStep1.html</td>
                 <td class="url">pc/joinStep1.html</td>
+                <td class="url">mo/joinStep1.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -169,6 +159,7 @@
                 <td>개인회원가입 - 정보입력</td>
                 <td class="name">joinStep2.html</td>
                 <td class="url">pc/joinStep2.html</td>
+                <td class="url">mo/joinStep2.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -180,6 +171,7 @@
                 <td>개인회원가입 - 가입완료</td>
                 <td class="name">joinStep3.html</td>
                 <td class="url">pc/joinStep3.html</td>
+                <td class="url">mo/joinStep3.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -192,6 +184,7 @@
                 <td>기업회원가입 - 정보입력</td>
                 <td class="name">joinCorporationStep1.html</td>
                 <td class="url">pc/joinCorporationStep1.html</td>
+                <td class="url">mo/joinCorporationStep1.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -207,6 +200,7 @@
                 <td>기업회원가입 - 회원가입완료</td>
                 <td class="name">joinCorporationStep2.html</td>
                 <td class="url">pc/joinCorporationStep2.html</td>
+                <td class="url">mo/joinCorporationStep2.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -221,6 +215,7 @@
                 <td>아이디 찾기</td>
                 <td class="name">userIdFind.html</td>
                 <td class="url">pc/userIdFind.html</td>
+                <td class="url">mo/userIdFind.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -232,6 +227,7 @@
                 <td>아이디 찾기 완료</td>
                 <td class="name">userIdFindDone.html</td>
                 <td class="url">pc/userIdFindDone.html</td>
+                <td class="url">mo/userIdFindDone.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -243,6 +239,7 @@
                 <td>비밀번호 찾기</td>
                 <td class="name">userPwFind.html</td>
                 <td class="url">pc/userPwFind.html</td>
+                <td class="url">mo/userPwFind.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -254,6 +251,7 @@
                 <td>비밀번호 재설정</td>
                 <td class="name">userPwReset.html</td>
                 <td class="url">pc/userPwReset.html</td>
+                <td class="url">mo/userPwReset.html</td>
                 <td class="status">
                     <span class="completed">완료</span>
                 </td>
@@ -266,14 +264,13 @@
     </table>
     <script>
         var table = document.getElementById('templateList');
-        var tr = table.getElementsByTagName('tr');
-
-        for(var i = 0; i < tr.length; i++){
-            tr[i].onclick = function(){
-                var _url = this.querySelector('.url').textContent;
-                window.open(_url,"_blank");
-            }
-        }
+        var links = table.querySelectorAll('.url');
+        links.forEach(function(link){
+            link.addEventListener('click', function(){
+                var url = this.textContent;
+                window.open(url);
+            });
+        });
     </script>
 </body>
 </html>
