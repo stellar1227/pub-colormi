@@ -1,5 +1,6 @@
 .join-wrap {
   padding-bottom: 40px;
+
   /** 회원가입 스텝**/
   .step-container {
     display: flex;
@@ -7,7 +8,6 @@
     justify-content: space-between;
     position: relative;
     margin: 0 auto 40px;
-    padding-top: 80px;
     width: 590px;
     .step-item {
       position: relative;
