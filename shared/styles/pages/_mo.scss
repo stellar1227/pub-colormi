@@ -1,0 +1,58 @@
+.form-table {
+  .form-group {
+    flex-direction: column;
+  }
+}
+.join-wrap {
+  .step-container {
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 10px;
+      right: 10px;
+      height: 2px;
+      background-color: lightgray;
+    }
+    .step-item {
+      z-index: 2;
+      &:not(:first-child)::before {
+        display: none;
+      }
+    }
+  }
+
+  .join-title {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    .title-dec {
+      padding-top: 10px;
+    }
+  }
+
+  .join-start {
+    .start-section {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    .section-buttons {
+      max-width: 340px;
+      width: 100%;
+    }
+  }
+
+  .join-step1,
+  .join-step2,
+  .join-step3 {
+    width: 100%;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+.box-form-wrap {
+  padding-left: 22px;
+  padding-right: 22px;
+}
