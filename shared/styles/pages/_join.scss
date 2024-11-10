@@ -148,6 +148,11 @@
   .agreed-term {
     li {
       padding-top: 2px;
+      .label {
+        span {
+          text-decoration: underline;
+        }
+      }
     }
     .agreed-term {
       padding-left: 28px;
@@ -227,5 +232,43 @@
         }
       }
     }
+  }
+}
+
+/** 기존 약관 스타일 **/
+.join-term {
+  width: 540px;
+}
+//snakecase 기존 약관 스타일
+.join_wrap {
+  width: 100%;
+  height: 250px;
+  display: block;
+  overflow-y: auto;
+  line-height: 1.8;
+  word-break: keep-all;
+
+  h3 {
+    text-align: left;
+    font-size: 18px;
+  }
+  .m_t40 {
+    margin-top: 20px;
+  }
+  b {
+    clear: both;
+    display: block;
+    font-weight: 600;
+    color: #000;
+    margin: 20px 0px 10px;
+    font-size: 16px;
+  }
+  div {
+    clear: both;
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 7px;
+    font-size: 14px;
   }
 }

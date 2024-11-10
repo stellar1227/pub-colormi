@@ -55,3 +55,41 @@ div:where(.swal2-container) div:where(.swal2-popup) {
   min-width: 270px;
   max-width: 90vh;
 }
+
+// modal
+/*
+  container: 'modal-container',
+  popup: 'modal-popup',
+  header: 'modal-header',
+  title: 'modal-title',
+  closeButton: 'modal-close-button',
+  htmlContainer: 'modal-html',
+  actions: 'modal-actions',
+*/
+.modal-container {
+  .modal-popup {
+  }
+  .modal-header {
+  }
+  .modal-close-button {
+    width: 32px;
+    height: 32px;
+    color: var(--color-gray-70);
+    margin-right: 20px;
+    margin-bottom: -30px;
+    transform: translateY(12px);
+    font-size: 3rem;
+  }
+  .modal-title {
+    padding: 20px 60px 20px 20px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    border-bottom: 1px solid var(--color-gray-20);
+  }
+  .modal-html {
+    text-align: left;
+    padding: 16px;
+  }
+}
