@@ -1,0 +1,19 @@
+/*
+* @how-to-use) @include svg-icon('/icon/star.svg', 16px, 16px);
+*/
+@mixin svg($svg-name, $width: null, $height: null) {
+  content: '';
+  display: inline-block;
+  background-image: url('../assets/images#{$svg-name}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @if $width {
+    width: $width;
+  }
+
+  @if $height {
+    height: $height;
+  }
+}
