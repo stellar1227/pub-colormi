@@ -1,6 +1,6 @@
 html,
 body {
-  min-width: 1200px;
+  width: 100%;
 }
 
 #wrap {
@@ -8,8 +8,10 @@ body {
 }
 #container {
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 #content {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
 }
