@@ -1,5 +1,5 @@
 /*
-* @how-to-use) @include svg-icon('/icon/star.svg', 16px, 16px);
+* @how-to-use) @include svg('/icon/star.svg', 16px, 16px);
 */
 @mixin svg($svg-name, $width: null, $height: null) {
   content: '';
@@ -15,5 +15,23 @@
 
   @if $height {
     height: $height;
+  }
+}
+
+/*
+* @how-to-use) @include ellipsis(2);
+*/
+@mixin ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @if $lines > 1 {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

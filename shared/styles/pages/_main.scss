@@ -1,3 +1,11 @@
+@use 'common/mixins' as mx;
+
+/* 메인 - minWidth 컨텐츠 wrap */
+.main-contents-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 /* 메인 - 최상단 배너 슬라이드 */
 .main-banner-wrap {
   margin-bottom: 80px;
@@ -28,6 +36,10 @@
     transform: translateY(-50%);
 
     &.link-icon {
+      @include mx.svg('/icon/ico-naver-blog.svg', 50px, 50px);
+      top: auto;
+      bottom: 0;
+      transform: none;
     }
   }
 }
@@ -50,41 +62,96 @@
   color: #7e7e7e;
   text-decoration: none;
 
+  &.white {
+    color: #fff;
+    border-color: #fff;
+  }
+
   &:after {
     content: '>';
     margin-left: 5px;
   }
 }
 
+/* 메인 - 인기제품 */
+.popular-list {
+  display: grid;
+  gap: 70px 14px;
+  grid-template-columns: repeat(4, 275px);
+  margin-bottom: 70px;
+
+  a {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .img {
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+
+  .title {
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+    margin-bottom: 3px;
+
+    > b {
+      @include mx.ellipsis(1);
+    }
+  }
+  .price {
+    display: block;
+    padding: 0 10px;
+    font-weight: 600;
+    color: #e52163;
+    @include mx.ellipsis(1);
+  }
+}
+
 /* 메인 - 공식몰 이벤트 */
-.event-card-wrap {
+.event-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   > li {
-    flex: 1;
-
     > a {
       display: block;
       text-decoration: none;
-    }
-    .img {
-      border-radius: 8px;
+      color: #242424;
     }
 
+    .img {
+      display: block;
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .title {
+      margin-bottom: 11px;
+      font-size: 18px;
+      font-weight: 600;
+      @include mx.ellipsis(1);
+    }
     .date {
-      color: var(--color-gray-30);
+      font-size: 18px;
     }
   }
 }
 
 /* 메인 - 콘텐츠/브랜드 스토리 */
 .main-contents-brand {
-  display: flex;
-  gap: 20px;
-  padding: 80px 0 40px;
-  background-color: var(--color-gray-10);
+  padding: 92px 0 50px;
+  background-color: #f6f6f6;
+
+  > .main-contents-wrap {
+    display: flex;
+    gap: 30px;
+  }
 
   .main-contents,
   .main-brand-story {
@@ -94,36 +161,89 @@
   /* 콘텐츠 */
   .contents-card-wrap {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     margin-bottom: 40px;
 
     > li {
-      flex: 1;
+      flex-grow: 1;
+      width: 250px;
       font-size: 18px;
       font-weight: 400;
-      color: var(--color-gray-50);
       word-break: keep-all;
-
-      h3 {
-        margin-bottom: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--color-gray-100);
-      }
 
       > a {
         display: block;
+        font-size: 18px;
+        color: #242424;
         text-decoration: none;
       }
 
+      .img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .title {
+        margin-bottom: 13px;
+        font-weight: 600;
+        color: #242424;
+        @include mx.ellipsis(1);
+      }
       .desc {
         white-space: pre-line;
-        line-height: 30px;
+        line-height: 33px;
       }
-      .img {
-        display: block;
-        border-radius: 10px;
-        margin-bottom: 20px;
+    }
+  }
+
+  /* 브랜드 스토리 */
+  .main-brand-story {
+    width: 600px;
+
+    .figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+
+        .title {
+          display: block;
+          margin-bottom: 18px;
+          font-weight: 400;
+          font-size: 25.8px;
+        }
+
+        .desc {
+          font-size: 21.11px;
+          line-height: 30.49px;
+          margin-bottom: 50px;
+        }
+
+        .btn-main-more {
+          display: inline-block;
+          position: static;
+          transform: none;
+          padding: 7px 17px;
+          font-size: 21.11px;
+          border-radius: 14px;
+        }
       }
     }
   }
