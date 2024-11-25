@@ -4,8 +4,9 @@
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: $weight;
-    src: local('#{$filename}'), local('#{$filename}'), local('#{$filename}');
-    src: url('/fonts/#{$filename}.woff2') format('woff2');
+    src:
+      local(#{$filename}),
+      url('/pc/assets/fonts/#{$filename}.woff2') format('woff2');
   }
 }
 

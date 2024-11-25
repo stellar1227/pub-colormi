@@ -29,6 +29,11 @@ const paths = {
     },
     libSrc: 'shared/styles/lib/**/*', // lib 소스 경로
   },
+  assets: {
+    src: 'shared/assets/**/*', // 공통 assets 소스 경로
+    pcDest: 'build/pc/assets/', // PC용 assets 복사 경로
+    moDest: 'build/mo/assets/', // MO용 assets 복사 경로
+  },
   scripts: {
     src: ['shared/scripts/**/*.js', '!shared/scripts/sweetalert2.all.min.js'], // Excludes 'sweetalert2.all.min.js' from concat
     dest: 'build/scripts/',
@@ -120,6 +125,13 @@ const copyLibPC = () =>
 const copyLibMO = () =>
   src(paths.styles.libSrc).pipe(dest(paths.styles.mo.lib)).pipe(bs.stream())
 
+// assets 복사 작업
+const copyAssetsPC = () =>
+  src(paths.assets.src).pipe(dest(paths.assets.pcDest)).pipe(bs.stream())
+
+const copyAssetsMO = () =>
+  src(paths.assets.src).pipe(dest(paths.assets.moDest)).pipe(bs.stream())
+
 export const scripts = () =>
   src(paths.scripts.src, { sourcemaps: true })
     .pipe(babel())
@@ -138,12 +150,17 @@ export const serve = () => {
     server: {
       baseDir: 'build',
     },
+    serveStaticOptions: {
+      extensions: ['woff2'], // 필요한 확장자 추가
+    },
+    cors: true,
     open: true,
   })
 
   watch(paths.styles.mo.watch, stylesMO)
   watch(paths.styles.pc.watch, stylesPC)
   watch(paths.styles.libSrc, gulp.series(copyLibPC, copyLibMO)) // lib 파일 변경 감지
+  watch(paths.assets.src, gulp.series(copyAssetsPC, copyAssetsMO)) // assets 파일 변경 감지
   watch(paths.scripts.src, scripts)
   watch(paths.html.index.src, htmlIndex)
   watch(paths.html.pc.src, htmlPC)
@@ -158,6 +175,8 @@ const build = gulp.series(
     stylesPC,
     copyLibPC, // PC용 lib 복사
     copyLibMO, // MO용 lib 복사
+    copyAssetsPC, // PC용 assets 복사
+    copyAssetsMO, // MO용 assets 복사
     scripts,
     copyScripts,
     htmlIndex,
