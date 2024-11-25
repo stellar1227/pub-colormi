@@ -19,12 +19,15 @@ const paths = {
       src: 'shared/styles/mo.scss',
       watch: ['shared/styles/**/*', 'shared/styles/screen/_mo.scss'],
       dest: 'build/mo/styles/',
+      lib: 'build/mo/styles/lib/', // MO용 lib 복사 경로
     },
     pc: {
       src: 'shared/styles/pc.scss',
       watch: ['shared/styles/**/*', 'shared/styles/screen/_pc.scss'],
       dest: 'build/pc/styles/',
+      lib: 'build/pc/styles/lib/', // PC용 lib 복사 경로
     },
+    libSrc: 'shared/styles/lib/**/*', // lib 소스 경로
   },
   scripts: {
     src: ['shared/scripts/**/*.js', '!shared/scripts/sweetalert2.all.min.js'], // Excludes 'sweetalert2.all.min.js' from concat
@@ -32,6 +35,7 @@ const paths = {
     copy: [
       'shared/scripts/sweetalert2.all.min.js',
       'shared/scripts/jquery-3.7.1.min.js',
+      'shared/scripts/swiper-bundle.min.js',
     ], // Paths for copying
   },
   html: {
@@ -109,6 +113,13 @@ const stylesParse = (target) => {
 export const stylesMO = () => stylesParse('mo')
 export const stylesPC = () => stylesParse('pc')
 
+// lib 폴더 복사 작업
+const copyLibPC = () =>
+  src(paths.styles.libSrc).pipe(dest(paths.styles.pc.lib)).pipe(bs.stream())
+
+const copyLibMO = () =>
+  src(paths.styles.libSrc).pipe(dest(paths.styles.mo.lib)).pipe(bs.stream())
+
 export const scripts = () =>
   src(paths.scripts.src, { sourcemaps: true })
     .pipe(babel())
@@ -132,6 +143,7 @@ export const serve = () => {
 
   watch(paths.styles.mo.watch, stylesMO)
   watch(paths.styles.pc.watch, stylesPC)
+  watch(paths.styles.libSrc, gulp.series(copyLibPC, copyLibMO)) // lib 파일 변경 감지
   watch(paths.scripts.src, scripts)
   watch(paths.html.index.src, htmlIndex)
   watch(paths.html.pc.src, htmlPC)
@@ -144,8 +156,10 @@ const build = gulp.series(
   gulp.parallel(
     stylesMO,
     stylesPC,
+    copyLibPC, // PC용 lib 복사
+    copyLibMO, // MO용 lib 복사
     scripts,
-    copyScripts, // Ensures the copy step runs
+    copyScripts,
     htmlIndex,
     htmlPC,
     htmlMO,
