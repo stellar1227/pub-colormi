@@ -272,8 +272,36 @@
   </div>
   <!-- main-wrap(E) - 메인 Wrapper -->
 
-  <div>
-    <span style="display:block; background-color: #eee; padding: 20px;margin-top:20px;font-size: 2em">FOOTER</span>
+  <div class="navigation" id="navigation">
+    <button type="button" class="navigation-button button-back">뒤로가기</button>
+    <a href="event.html" class="navigation-button button-event">이벤트</a>
+    <button type="button" class="navigation-button button-talk">Talk 문의하기</button>
+    <button type="button" class="navigation-button button-top">TOP</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topButton = document.getElementById('navigation');
+      const footer = document.querySelector('.footer');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const footerTop = footer.getBoundingClientRect().top + scrollY;
+
+        if (scrollY + windowHeight > footerTop) {
+          topButton.classList.add('navigation-ab');
+          topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`;
+        } else {
+          topButton.classList.remove('navigation-ab');
+          topButton.style.bottom = '72px';
+        }
+      });
+    })
+  </script>
+
+  <div class="footer">
+    <span style="display:block; background-color: #eee; padding: 20px;margin-top:20px;font-size: 2em; height: 100px;">FOOTER</span>
   </div>
 
 
