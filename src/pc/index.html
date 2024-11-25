@@ -5,127 +5,134 @@
 
     @@include('header.html')
         
-    <!-- main-wrap(S) - 메인 Wrapper -->
-    <div class="main-wrap">
+    <!-- wrap(S) -->
+    <div id="wrap">
+      <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+      </div>
 
-      <!-- 메인 배너(S) -->
-      <div class="main-banner-wrap">
-        <div class="swiper swiper-type1 main-banner">
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+      <div id="container">
+          
+        <!-- 메인 배너(S) -->
+        <div class="main-banner-wrap">
+          <div class="swiper swiper-type1 main-banner">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
-
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
-      </div>
-      <!-- 메인 배너(E) -->
+        <!-- 메인 배너(E) -->
 
-      <!-- 인기제품(S) -->
-      <div class="main-contents-wrap">
-        <h2 class="main-section-title">인기제품</h2>
-      </div>
-      <!-- 인기제품(E) -->
+        <!-- 인기제품(S) -->
+        <div class="main-contents-wrap">
+          <h2 class="main-section-title">인기제품</h2>
+        </div>
+        <!-- 인기제품(E) -->
 
-      <!-- 인기제품(S) -->
-      <div class="main-contents-wrap">
-        <h2 class="main-section-title">신제품</h2>
-      </div>
-      <!-- 인기제품(E) -->
+        <!-- 인기제품(S) -->
+        <div class="main-contents-wrap">
+          <h2 class="main-section-title">신제품</h2>
+        </div>
+        <!-- 인기제품(E) -->
 
-      <!-- 공식몰 이벤트(S) -->
-      <div class="main-contents-wrap">
-        <h2 class="main-section-title">
-          공식몰 이벤트
-          <a href="#" class="btn-main-more">더보기</a>
-        </h2>
-
-        <ul class="event-card-wrap">
-          <li>
-            <a href="#">
-              <img src="images/temp/event-card1.jpg" alt="">
-              <h3>10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
-              <span class="date">2024.10.01~10.31</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/temp/event-card1.jpg" alt="">
-              <h3>로드숍 방문하고 SNS 인증하면 선물이 와르르~</h3>
-              <span class="date">2024.10.01~10.28</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- 공식몰 이벤트(E) -->
-
-      <!-- 콘텐츠/브랜드 스토리(S) -->
-      <div class="main-contents-brand">
-        <!-- 콘텐츠(S) -->
-        <div class="main-contents">
-          <h2 class="main-section-title align-left">
-            콘텐츠
-            <!-- FIXME: 네이버블로그 아이콘으로 교체 -->
-            <a href="#" class="btn-title link-icon">
-              <span class="blind">네이버 블로그</span>
-            </a>
+        <!-- 공식몰 이벤트(S) -->
+        <div class="main-contents-wrap">
+          <h2 class="main-section-title">
+            공식몰 이벤트
+            <a href="#" class="btn-main-more">더보기</a>
           </h2>
-          <ul class="contents-card-wrap">
-            <li>
-              <a href="#">
-                <img class="img" src="images/temp/contents-card1.jpg" alt="">
-                <h3>판매 업체 소개 #디지털인쇄업체</h3>
-                <div class="desc">지속적으로 판매상품 개편과 
-                  신제품 개발에 몰두하고있습니다.</div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img class="img" src="images/temp/contents-card1.jpg" alt="">
-                <h3>판매 업체 소개 #디지털인쇄업체</h3>
-                <div class="desc">현장접수, 디자인, 제작, 출고까지 원스톱 진행이 가능합니다.</div>
-              </a>
-            </li>
 
+          <ul class="event-card-wrap">
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3>10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/temp/event-card1.jpg" alt="">
+                <h3>로드숍 방문하고 SNS 인증하면 선물이 와르르~</h3>
+                <span class="date">2024.10.01~10.28</span>
+              </a>
+            </li>
           </ul>
         </div>
-        <!-- 콘텐츠(E) -->
-        
-        <!-- 브랜드 스토리(S) -->
-        <div class="main-brand-story">
-          <h2 class="main-section-title align-left">브랜드 스토리</h2>
+        <!-- 공식몰 이벤트(E) -->
 
+        <!-- 콘텐츠/브랜드 스토리(S) -->
+        <div class="main-contents-brand">
+          <!-- 콘텐츠(S) -->
+          <div class="main-contents">
+            <h2 class="main-section-title align-left">
+              콘텐츠
+              <!-- FIXME: 네이버블로그 아이콘으로 교체 -->
+              <a href="#" class="btn-title link-icon">
+                <span class="blind">네이버 블로그</span>
+              </a>
+            </h2>
+            <ul class="contents-card-wrap">
+              <li>
+                <a href="#">
+                  <img class="img" src="images/temp/contents-card1.jpg" alt="">
+                  <h3>판매 업체 소개 #디지털인쇄업체</h3>
+                  <div class="desc">지속적으로 판매상품 개편과 
+                    신제품 개발에 몰두하고있습니다.</div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img" src="images/temp/contents-card1.jpg" alt="">
+                  <h3>판매 업체 소개 #디지털인쇄업체</h3>
+                  <div class="desc">현장접수, 디자인, 제작, 출고까지 원스톱 진행이 가능합니다.</div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- 콘텐츠(E) -->
+          
+          <!-- 브랜드 스토리(S) -->
+          <div class="main-brand-story">
+            <h2 class="main-section-title align-left">브랜드 스토리</h2>
+
+          </div>
+          <!-- 브랜드 스토리(E) -->
         </div>
-        <!-- 브랜드 스토리(E) -->
+        <!-- 콘텐츠/브랜드 스토리(E) -->
+        
+        <!-- 공지사항(S) -->
+        <div class="main-notice">
+          <h3 class="main-notice-title">공지사항</h3>
+          <ul class="main-notice-list">
+            <li>
+              <a href="#">
+                <span class="title">[사이트 오픈 기념] 12월 이벤트 당첨자 발표</span>
+                <span class="date">2025.01.12</span>
+                <span class="btn-main-more">더보기</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="date">2024.10.01</span>
+                <span class="text">공지사항이 노출됩니다. 공지사항이 노출됩니다.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- 공지사항(E) -->
+
       </div>
-      <!-- 콘텐츠/브랜드 스토리(E) -->
-       
-      <!-- 공지사항(S) -->
-      <div class="main-notice">
-        <h3 class="main-notice-title">공지사항</h3>
-        <ul class="main-notice-list">
-          <li>
-            <a href="#">
-              <span class="title">[사이트 오픈 기념] 12월 이벤트 당첨자 발표</span>
-              <span class="date">2025.01.12</span>
-              <span class="btn-main-more">더보기</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="date">2024.10.01</span>
-              <span class="text">공지사항이 노출됩니다. 공지사항이 노출됩니다.</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- 공지사항(E) -->
     </div>
-    <!-- main-wrap(E) - 메인 Wrapper -->
+    <!-- wrap(E) -->
 
     @@include('footer.html')
      
