@@ -141,6 +141,11 @@
       font-size: 18px;
     }
   }
+  &.done {
+    > li img {
+      filter: grayscale(100%);
+    }
+  }
 }
 
 /* 메인 - 콘텐츠/브랜드 스토리 */

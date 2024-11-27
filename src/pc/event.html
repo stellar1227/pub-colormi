@@ -10,13 +10,52 @@
         <a href="#content">본문 바로가기</a>
       </div>
       <!-- header.html 파일 들어갈 자리 -->
-      <div id="container" class="">
-        <div id="content" class="">
-          
+      <div id="container" class="event-container">
+        <div id="content">
+          <h2 class="event-section-title">공식몰 이벤트</h2>
+          <div class="tab-container">
+            <div class="tab active" data-tab="1">진행중 이벤트</div>
+            <div class="tab" data-tab="2">종료된 이벤트</div>
+          </div>
+          <div class="tab-content active" data-tab="1">
+            <ul class="event-list">
+              @@loop('pages/common/event-card.html', [ { imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"},{ imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"},{ imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"}, ])
+            </ul>
+          </div>
+          <div class="tab-content" data-tab="2">
+            <ul class="event-list done">
+              @@loop('pages/common/event-card.html', [ { imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"},{ imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"},{ imagePath:
+              "assets/images/temp/event-01.png"}, { imagePath:
+              "assets/images/temp/event-02.png"}, ])
+            </ul>
+          </div>
         </div>
       </div>
       <!-- footer.html 파일 들어갈 자리 -->
     </div>
     @@include('footer.html')
+
+    <script>
+      $(document).ready(function () {
+        $('.tab').on('click', function () {
+          const targetTab = $(this).data('tab')
+          $('.tab').removeClass('active')
+          $(this).addClass('active')
+
+          $('.tab-content').removeClass('active')
+          $(`.tab-content[data-tab="${targetTab}"]`).addClass('active')
+        })
+      })
+    </script>
   </body>
 </html>
