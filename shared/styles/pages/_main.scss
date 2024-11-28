@@ -39,6 +39,7 @@
       height: 465px;
       position: relative;
       text-decoration: none;
+      user-select: none;
 
       .title {
         display: block;
@@ -73,35 +74,51 @@
     }
 
     .main-banner-prev {
-      left: 215px;
+      left: 11.3%;
       &:after {
         @include mx.svg('/btn/btn-slider-prev-main-banner.svg', 29px, 55px);
       }
     }
     .main-banner-next {
-      right: 215px;
+      right: 11.3%;
       &:after {
         @include mx.svg('/btn/btn-slider-next-main-banner.svg', 29px, 55px);
       }
     }
 
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: 1750px) {
       .main-banner-prev {
-        left: 80px;
+        left: 3%;
       }
       .main-banner-next {
-        right: 80px;
+        right: 3%;
       }
     }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1450px) {
       .main-banner-prev {
-        left: 0px;
+        left: 20px;
       }
       .main-banner-next {
-        right: 0px;
+        right: 20px;
       }
     }
+
+    @media screen and (max-width: 1300px) {
+      .main-banner-prev,
+      .main-banner-next {
+        display: none;
+      }
+    }
+
+    // @media screen and (max-width: 1500px) {
+    //   .main-banner-prev {
+    //     left: 0px;
+    //   }
+    //   .main-banner-next {
+    //     right: 0px;
+    //   }
+    // }
   }
 
   .main-banner-pagination.swiper-pagination {
