@@ -166,15 +166,37 @@
         <div class="swiper swiper-type1 main-banner">
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="title">
+                  사진으로 만드는 엽서<br />소중한 추억 간직하기
+                </div>
+                <img class="img" src="assets/images/img/main-banner01.jpg" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="title">
+                  사진으로 만드는 엽서<br />소중한 추억 간직하기
+                </div>
+                <img class="img" src="assets/images/img/main-banner01.jpg" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="title">
+                  사진으로 만드는 엽서<br />소중한 추억 간직하기
+                </div>
+                <img class="img" src="assets/images/img/main-banner01.jpg" alt="">
+              </a>
+            </div>
           </div>
 
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="main-banner-prev swiper-button-prev"></div>
+          <div class="main-banner-next swiper-button-next"></div>
         </div>
+
+        <div class="main-banner-pagination pagination-type1 swiper-pagination"></div>
       </div>
       <!-- 메인 배너(E) -->
 
@@ -267,11 +289,46 @@
       </div>
       <!-- 인기제품(E) -->
 
-      <!-- 인기제품(S) -->
-      <div class="main-contents-wrap">
+      <!-- 신제품(S) -->
+      <div class="main-contents-wrap main-new">
         <h2 class="main-section-title">신제품</h2>
+
+        <div class="swiper swiper-type1 main-new-slide">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="text">
+                  <span class="title">맞춤형 엽서</span>
+                  <span class="desc">여행사진으로 만드는 나만의 엽서</span>
+                </div>
+                <img class="img" src="assets/images/img/main-new01.jpg" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="text">
+                  <span class="title">맞춤형 엽서</span>
+                  <span class="desc">여행사진으로 만드는 나만의 엽서2</span>
+                </div>
+                <img class="img" src="assets/images/img/main-new01.jpg" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="link">
+                <div class="text">
+                  <span class="title">맞춤형 엽서</span>
+                  <span class="desc">여행사진으로 만드는 나만의 엽서3</span>
+                </div>
+                <img class="img" src="assets/images/img/main-new01.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-new-pagination pagination-type1 swiper-pagination"></div>
       </div>
-      <!-- 인기제품(E) -->
+      <!-- 신제품(E) -->
 
       <!-- 공식몰 이벤트(S) -->
       <div class="main-contents-wrap">
@@ -321,7 +378,7 @@
               </li>
               <li>
                 <a href="#">
-                  <img class="img" src="assets/images/temp/main-contents-01.png" alt="">
+                  <img class="img" src="assets/images/temp/main-contents-02.png" alt="">
                   <h3 class="title">판매 업체 소개 #디지털인쇄업체</h3>
                   <div class="desc">현장접수, 디자인, 제작, 출고까지 원스톱 진행이 가능합니다.</div>
                 </a>
@@ -333,20 +390,30 @@
 
           <!-- 브랜드 스토리(S) -->
           <div class="main-brand-story">
-            <h2 class="main-section-title align-left">브랜드 스토리</h2>
-            <div class="figure">
-              <!-- [D] 더보기 링크는 href에 연결해주세요. -->
-              <a href="#">
-                <!-- FIXME: slider 적용 (4장이미지는 어디에?) -->
-                <img class="img" src="assets/images/temp/main-brand-story.png" alt="">
+            <div class="title-wrap">
+              <h2 class="main-section-title align-left">브랜드 스토리</h2>
+              <button class="brand-slide-prev swiper-button-prev">이전</button>
+              <button class="brand-slide-next swiper-button-next">다음</button>
+            </div>
 
+            <div class="figure">
+              <div class="swiper swiper-brand">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img class="img" src="assets/images/img/main-brand-story01.jpg" alt=""></div>
+                  <div class="swiper-slide"><img class="img" src="assets/images/img/main-brand-story02.jpg" alt=""></div>
+                  <div class="swiper-slide"><img class="img" src="assets/images/img/main-brand-story03.jpg" alt=""></div>
+                  <div class="swiper-slide"><img class="img" src="assets/images/img/main-brand-story04.jpg" alt=""></div>
+                </div>
+              </div>
+
+              <!-- [D] 더보기 링크는 href에 연결해주세요. -->
+              <a href="#" class="link">
                 <div class="text">
                   <b class="title">칼라미 : COLOR + 美</b>
                   <p class="desc">색을 아름답게 표현하겠다는 의지를 실천하는 곳<br />이곳은 고품질 디지털 인쇄 전문 칼라미입니다.</p>
                   <span class="btn-main-more white">더보기</span>
                 </div>
               </a>
-
             </div>
 
           </div>
@@ -357,24 +424,56 @@
 
       <!-- 공지사항(S) -->
       <div class="main-notice">
-        <h3 class="main-notice-title">공지사항</h3>
-        <ul class="main-notice-list">
-          <li>
-            <a href="#">
-              <span class="title">[사이트 오픈 기념] 12월 이벤트 당첨자 발표</span>
-              <span class="date">2025.01.12</span>
-              <span class="btn-main-more">더보기</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="date">2024.10.01</span>
-              <span class="text">공지사항이 노출됩니다. 공지사항이 노출됩니다.</span>
-            </a>
-          </li>
-        </ul>
+        <div class="main-contents-wrap">
+          <h3 class="main-notice-title"><i>공지사항</i></h3>
+
+          <!-- [D] 더보기 링크 -->
+          <a href="#" class="btn-main-more">더보기</a>
+
+          <ul class="main-notice-list">
+            <li>
+              <a href="#" class="link">
+                <span class="title">[사이트 오픈 기념] 12월 이벤트 당첨자 발표</span>
+                <span class="date">2025.01.12</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="link">
+                <span class="title">공지사항이 노출됩니다. 공지사항이 노출됩니다.</span>
+                <span class="date">2024.10.01</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <!-- 공지사항(E) -->
+
+      <!-- 퀵메뉴(S) -->
+      <div class="main-quick-menu">
+        <div class="main-contents-wrap">
+          <ul class="main-quick-menu-list">
+            <li>
+              <a href="" class="estimate">견적문의</a>
+            </li>
+            <li>
+              <a href="" class="guide">작업가이드</a>
+            </li>
+            <li>
+              <a href="" class="shipment">출고안내</a>
+            </li>
+            <li>
+              <a href="" class="faq">FAQ</a>
+            </li>
+            <li>
+              <a href="" class="map">오시는길</a>
+            </li>
+            <li>
+              <a href="" class="webhard">웹하드접속</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 퀵메뉴(E) -->
 
     </div>
 
@@ -474,11 +573,41 @@
       },
       pagination: {
         enabled: true,
-        el: '.swiper-pagination',
+        el: '.main-banner-pagination',
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.main-banner-next',
+        prevEl: '.main-banner-prev',
+      },
+      scrollbar: {
+        enable: false
+      }
+    });
+
+    // 신제품 슬라이드
+    const swiperNew = new Swiper('.main-new-slide', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      pagination: {
+        enabled: true,
+        el: '.main-new-pagination',
+      },
+      scrollbar: {
+        enable: false
+      }
+    });
+
+    // 브랜드 스토리 슬라이드
+    const swiperBrand = new Swiper('.swiper-brand', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        nextEl: '.brand-slide-next',
+        prevEl: '.brand-slide-prev',
       },
       scrollbar: {
         enable: false
