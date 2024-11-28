@@ -132,3 +132,11 @@ class Modal {
 }
 
 window.Modal = Modal
+
+$(function () {
+  $('.links-content li').on('click', function () {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    console.log('!!!')
+  })
+})
