@@ -1,0 +1,95 @@
+.brandStory-container {
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2a2a2a;
+    text-align: center;
+    margin-bottom: 29px;
+    span {
+      color: #e52163;
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: lighter;
+    text-align: center;
+    color: #2a2a2a;
+    margin-bottom: 86px;
+  }
+  .brandStory-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.event-container {
+  .event-section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2a2a2a;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .event-list {
+    gap: 70px 19px;
+    & > li {
+      flex: 1 1 calc(50% - 19px);
+    }
+  }
+
+  .tab-container {
+    display: flex;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    width: 100%;
+    margin: 0 auto 98px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 30px 0 28px;
+    border: 2px solid #e9e9e9;
+    border-bottom: 2px solid #2a2a2a;
+    font-size: 28px;
+    font-weight: bold;
+    color: #707070;
+    background-color: #e9e9e9;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    cursor: pointer;
+
+    &.active {
+      background-color: #fff;
+      font-weight: bold;
+      border: 2px solid #2a2a2a;
+      border-bottom: 2px solid #fff;
+      color: #2a2a2a;
+    }
+  }
+  .tab-content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.gnbAll-container {
+  .gnb-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #242424;
+    margin-bottom: 32px;
+  }
+  .popular-list {
+    gap: 35px 25px;
+    grid-template-columns: repeat(3, 365px);
+    margin-bottom: 75px;
+    .img {
+      width: 100%;
+    }
+  }
+}

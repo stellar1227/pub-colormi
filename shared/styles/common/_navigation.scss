@@ -15,18 +15,17 @@
     overflow: hidden;
     text-indent: -999px;
 
-    &.button-back{
-      background-image: url('/pc/assets/images/icon/ico-wing-prev.svg');
-    } 
-    &.button-event{
-      background-image: url('/pc/assets/images/icon/ico-wing-event.svg');
-    } 
-    &.button-talk{
-      background-image: url('/pc/assets/images/icon/ico-wing-kakao.svg');
-    } 
-    &.button-top{
-      background-image: url('/pc/assets/images/icon/ico-wing-top.svg');
+    &.button-back {
+      background-image: url('../assets/images/icon/ico-wing-prev.svg');
+    }
+    &.button-event {
+      background-image: url('../assets/images/icon/ico-wing-event.svg');
+    }
+    &.button-talk {
+      background-image: url('../assets/images/icon/ico-wing-kakao.svg');
+    }
+    &.button-top {
+      background-image: url('../assets/images/icon/ico-wing-top.svg');
     }
   }
 }
-

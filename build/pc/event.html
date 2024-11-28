@@ -158,9 +158,105 @@
       <a href="#content">본문 바로가기</a>
     </div>
     <!-- header.html 파일 들어갈 자리 -->
-    <div id="container" class="">
-      <div id="content" class="">
-
+    <div id="container" class="event-container">
+      <div id="content">
+        <h2 class="event-section-title">공식몰 이벤트</h2>
+        <div class="tab-container">
+          <div class="tab active" data-tab="1">진행중 이벤트</div>
+          <div class="tab" data-tab="2">종료된 이벤트</div>
+        </div>
+        <div class="tab-content active" data-tab="1">
+          <ul class="event-list">
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" data-tab="2">
+          <ul class="event-list done">
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-01.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="img" src="assets/images/temp/event-02.png" alt="">
+                <h3 class="title">10만원 이상 구매 시 영화 관람권 증정 (1인 2매)</h3>
+                <span class="date">2024.10.01~10.31</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <!-- footer.html 파일 들어갈 자리 -->
@@ -168,30 +264,33 @@
   <div class="navigation" id="navigation">
     <button type="button" class="navigation-button button-back">뒤로가기</button>
     <a href="event.html" class="navigation-button button-event">이벤트</a>
-    <button type="button" class="navigation-button button-talk">Talk 문의하기</button>
+    <button type="button" class="navigation-button button-talk">
+      Talk 문의하기
+    </button>
     <button type="button" class="navigation-button button-top">TOP</button>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const topButton = document.getElementById('navigation');
-      const footer = document.querySelector('.footer');
+      const topButton = document.getElementById('navigation')
+      const footer = document.querySelector('#footer')
 
       window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
+        const scrollY = window.scrollY
+        const windowHeight = window.innerHeight
+        const footerTop = footer.getBoundingClientRect().top + scrollY
 
         if (scrollY + windowHeight > footerTop) {
-          topButton.classList.add('navigation-ab');
-          topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`;
+          topButton.classList.add('navigation-ab')
+          topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`
         } else {
-          topButton.classList.remove('navigation-ab');
-          topButton.style.bottom = '72px';
+          topButton.classList.remove('navigation-ab')
+          topButton.style.bottom = '72px'
         }
-      });
+      })
     })
   </script>
+
   <!-- footer -->
   <div id="footer">
     <footer>
@@ -245,6 +344,19 @@
     <p class="copyrights">&copy; 2018. BILLPOST.All Rigths Reserved.</p>
   </div>
   <!-- //footer -->
+
+  <script>
+    $(document).ready(function() {
+      $('.tab').on('click', function() {
+        const targetTab = $(this).data('tab')
+        $('.tab').removeClass('active')
+        $(this).addClass('active')
+
+        $('.tab-content').removeClass('active')
+        $(`.tab-content[data-tab="${targetTab}"]`).addClass('active')
+      })
+    })
+  </script>
 </body>
 
 </html>

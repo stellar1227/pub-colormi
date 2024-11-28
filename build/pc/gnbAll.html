@@ -158,9 +158,143 @@
       <a href="#content">본문 바로가기</a>
     </div>
     <!-- header.html 파일 들어갈 자리 -->
-    <div id="container" class="">
-      <div id="content" class="">
+    <div id="container" class="gnbAll-container">
+      <div id="content">
+        <h2 class="gnb-section-title">책자</h2>
+        <ul class="popular-list">
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all11.jpg" alt="">
+              <span class="title">
+                <b>무선제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all10.jpg" alt="">
+              <span class="title">
+                <b>중철제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all09.jpg" alt="">
+              <span class="title">
+                <b>일반명함</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all07.jpg" alt="">
+              <span class="title">
+                <b>초대장</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+        </ul>
 
+        <h2 class="gnb-section-title">출력</h2>
+        <ul class="popular-list">
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all08.jpg" alt="">
+              <span class="title">
+                <b>중철제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all06.jpg" alt="">
+              <span class="title">
+                <b>와이어제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+        </ul>
+
+        <h2 class="gnb-section-title">명함</h2>
+        <ul class="popular-list">
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all04.jpg" alt="">
+              <span class="title">
+                <b>중철제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all05.jpg" alt="">
+              <span class="title">
+                <b>와이어제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all02.jpg" alt="">
+              <span class="title">
+                <b>일반명함</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+        </ul>
+
+        <h2 class="gnb-section-title">홍보물</h2>
+        <ul class="popular-list">
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all01.jpg" alt="">
+              <span class="title">
+                <b>중철제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all03.jpg" alt="">
+              <span class="title">
+                <b>와이어제본</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="img" src="assets/images/img/popular-all03.jpg" alt="">
+              <span class="title">
+                <b>일반명함</b>
+                <i>A4x10부</i>
+              </span>
+              <span class="price">18,000원 ~ </span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- footer.html 파일 들어갈 자리 -->
@@ -168,30 +302,33 @@
   <div class="navigation" id="navigation">
     <button type="button" class="navigation-button button-back">뒤로가기</button>
     <a href="event.html" class="navigation-button button-event">이벤트</a>
-    <button type="button" class="navigation-button button-talk">Talk 문의하기</button>
+    <button type="button" class="navigation-button button-talk">
+      Talk 문의하기
+    </button>
     <button type="button" class="navigation-button button-top">TOP</button>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const topButton = document.getElementById('navigation');
-      const footer = document.querySelector('.footer');
+      const topButton = document.getElementById('navigation')
+      const footer = document.querySelector('#footer')
 
       window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const footerTop = footer.getBoundingClientRect().top + scrollY;
+        const scrollY = window.scrollY
+        const windowHeight = window.innerHeight
+        const footerTop = footer.getBoundingClientRect().top + scrollY
 
         if (scrollY + windowHeight > footerTop) {
-          topButton.classList.add('navigation-ab');
-          topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`;
+          topButton.classList.add('navigation-ab')
+          topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`
         } else {
-          topButton.classList.remove('navigation-ab');
-          topButton.style.bottom = '72px';
+          topButton.classList.remove('navigation-ab')
+          topButton.style.bottom = '72px'
         }
-      });
+      })
     })
   </script>
+
   <!-- footer -->
   <div id="footer">
     <footer>

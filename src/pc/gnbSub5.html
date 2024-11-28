@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <!-- head.html 파일 포함 -->
+  @@include('head-pc.html', {title: "GNB 명함 - 칼라미"})
+
+  <body>
+    @@include('header.html')
+    <div id="wrap">
+      <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+      </div>
+      <!-- header.html 파일 들어갈 자리 -->
+      <div id="container" class="gnbSub-container">
+        <div id="content">
+          <div class="links-container">
+            <ul>
+              <li></li>
+              <li class="active"><a href="tab1"></a></li>
+              <li><a href="tab2"></a></li>
+              <li><a href="tab3"></a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="good-list">
+              <li id="tab1">
+                <img src="" alt="" class="img" />
+                <div>
+                  <strong class="good-title"></strong>
+                  <p ></p>
+                  <button class="good-button">주문하기</button>
+                </div>
+              </li>
+              <li id="tab2">
+                <img src="" alt="" class="img" />
+                <div>
+                  <strong class="good-title"></strong>
+                  <p ></p>
+                  <button class="good-button">주문하기</button>
+                </div>
+              </li>
+              <li id="tab3">
+                <img src="" alt="" class="img" />
+                <div>
+                  <strong class="good-title"></strong>
+                  <p ></p>
+                  <button class="good-button">주문하기</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- footer.html 파일 들어갈 자리 -->
+    </div>
+    @@include('footer.html')
+  </body>
+</html>
