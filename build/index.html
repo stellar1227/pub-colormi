@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>칼라미/template List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body,
+      html {
+        font-size: 14px;
+        color: #666;
+        font-family: helvetica, '맑은고딕', sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        padding: 10px 0;
+        font-size: 30px;
+      }
+      dl {
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: right;
+        padding: 0 20px;
+      }
+      dt {
+        font-weight: 600;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table thead th {
+        border-top: 2px solid #2d2d2d;
+      }
+      table th,
+      table td {
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        border-right: 1px solid #ccc;
+      }
+      table th:last-child,
+      table td:last-child {
+        border-right: 0;
+      }
+      table tbody tr {
+        cursor: pointer;
+      }
+      table tbody tr:hover {
+        background: #fafafa;
+      }
+      .ready {
+        color: #aaa;
+      }
+      .ing {
+        color: tomato;
+      }
+      .completed {
+        color: green;
+      }
+      .desc_box {
+        text-align-last: left;
+        padding-left: 10px;
+      }
+      .log {
+        margin-bottom: 5px;
+        color: tomato;
+        text-align-last: left;
+        padding-left: 10px;
+      }
+      .log:before {
+        content: '*';
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">칼라미 template list</h1>
+    <dl class="info">
+      <dt>작성자</dt>
+      <dd id="info">lee mijin</dd>
+    </dl>
+    <table id="templateList">
+      <thead>
+        <tr>
+          <th scope="col">menu</th>
+          <th scope="col">depth1</th>
+          <th scope="col">depth2</th>
+          <th scope="col">depth3</th>
+          <th scope="col">name</th>
+          <th scope="col">PcUrl</th>
+          <th scope="col">MoUrl</th>
+          <th scope="col">status</th>
+          <th scope="col">description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- codeSnippet -->
+        <tr>
+          <td colspan="4">style guide</td>
+          <td class="name">index.html</td>
+          <td class="url" colspan="2">guide/index.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <div class="desc_box">UI component style guide <br /></div>
+            <p class="log">2024-11-04 생성</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">PC include code Temp</td>
+          <td class="name">index.html</td>
+          <td class="url">pc/index.html</td>
+          <td class="url">mo/index.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <div class="desc_box">gulp include 코드</div>
+            <p class="log">2024-11-04 생성</p>
+          </td>
+        </tr>
+        <!-- 회원 프로세스 -->
+        <tr>
+          <th scope="row" rowspan="10">회원관리</th>
+          <td rowspan="10">회원</td>
+          <td rowspan="6">가입</td>
+          <td>개인회원/사업자구분</td>
+          <td class="name">joinStart.html</td>
+          <td class="url">pc/joinStart.html</td>
+          <td class="url">mo/joinStart.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>개인회원가입 - 약관동의</td>
+          <td class="name">joinStep1.html</td>
+          <td class="url">pc/joinStep1.html</td>
+          <td class="url">mo/joinStep1.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="desc_box">모달 팝업 예시</p>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>개인회원가입 - 정보입력</td>
+          <td class="name">joinStep2.html</td>
+          <td class="url">pc/joinStep2.html</td>
+          <td class="url">mo/joinStep2.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>개인회원가입 - 가입완료</td>
+          <td class="name">joinStep3.html</td>
+          <td class="url">pc/joinStep3.html</td>
+          <td class="url">mo/joinStep3.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>기업회원가입 - 정보입력</td>
+          <td class="name">joinCorporationStep1.html</td>
+          <td class="url">pc/joinCorporationStep1.html</td>
+          <td class="url">mo/joinCorporationStep1.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>기업회원가입 - 회원가입완료</td>
+          <td class="name">joinCorporationStep2.html</td>
+          <td class="url">pc/joinCorporationStep2.html</td>
+          <td class="url">mo/joinCorporationStep2.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-09 최초 완료</p>
+          </td>
+        </tr>
+
+        <!-- 아이디/비밀번호 찾기(S) -->
+        <tr>
+          <td rowspan="4">아이디/비밀번호 찾기</td>
+          <td>아이디 찾기</td>
+          <td class="name">userIdFind.html</td>
+          <td class="url">pc/userIdFind.html</td>
+          <td class="url">mo/userIdFind.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-08 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>아이디 찾기 완료</td>
+          <td class="name">userIdFindDone.html</td>
+          <td class="url">pc/userIdFindDone.html</td>
+          <td class="url">mo/userIdFindDone.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-08 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호 찾기</td>
+          <td class="name">userPwFind.html</td>
+          <td class="url">pc/userPwFind.html</td>
+          <td class="url">mo/userPwFind.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="log">2024-11-08 최초 완료</p>
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호 재설정</td>
+          <td class="name">userPwReset.html</td>
+          <td class="url">pc/userPwReset.html</td>
+          <td class="url">mo/userPwReset.html</td>
+          <td class="status">
+            <span class="completed">완료</span>
+          </td>
+          <td>
+            <p class="desc_box">alert예시</p>
+            <p class="log">2024-11-08 최초 완료</p>
+          </td>
+        </tr>
+        <!-- 아이디/비밀번호 찾기(E) -->
+
+        <!-- 외부 페이지 (S) -->
+        <tr>
+          <td rowspan="9"></td>
+          <td rowspan="2" colspan="2">외부 페이지</td>
+          <td>브랜드 스토리</td>
+          <td class="name">brandStory.html</td>
+          <td class="url">pc/brandStory.html</td>
+          <td class="url">mo/brandStory.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">
+              2024-11-24 작업시작 <br />
+              상하 간격 조정 필요
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>이벤트</td>
+          <td class="name">event.html</td>
+          <td class="url">pc/event.html</td>
+          <td class="url">mo/event.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">
+              2024-11-24 작업시작<br />
+              상하 간격 조정 필요
+            </p>
+          </td>
+        </tr>
+        <!-- 외부 페이지 (E) -->
+
+        <!-- GNB 페이지 (S) -->
+        <tr>
+          <td rowspan="7" colspan="2">Gnb</td>
+          <td>GNB_ 전체</td>
+          <td class="name">gnbAll.html</td>
+          <td class="url">pc/gnbAll.html</td>
+          <td class="url">mo/gnbAll.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">
+              2024-11-26 작업시작<br />
+              상하 간격 조정 필요
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_책자</td>
+          <td class="name">gnbSub1.html</td>
+          <td class="url">pc/gnbSub1.html</td>
+          <td class="url">mo/gnbSub1.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_출력</td>
+          <td class="name">gnbSub2.html</td>
+          <td class="url">pc/gnbSub2.html</td>
+          <td class="url">mo/gnbSub2.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_명함</td>
+          <td class="name">gnbSub3.html</td>
+          <td class="url">pc/gnbSub3.html</td>
+          <td class="url">mo/gnbSub3.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_홍보물</td>
+          <td class="name">gnbSub4.html</td>
+          <td class="url">pc/gnbSub4.html</td>
+          <td class="url">mo/gnbSub4.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_안내장</td>
+          <td class="name">gnbSub5.html</td>
+          <td class="url">pc/gnbSub5.html</td>
+          <td class="url">mo/gnbSub5.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <tr>
+          <td>GNB_판촉물</td>
+          <td class="name">gnbSub6.html</td>
+          <td class="url">pc/gnbSub6.html</td>
+          <td class="url">mo/gnbSub6.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-28 작업시작</p>
+          </td>
+        </tr>
+        <!-- GNB 페이지 (E) -->
+
+        <!-- 메인(S) -->
+        <tr>
+          <th scope="row" colspan="4">메인</th>
+          <td class="name">index.html</td>
+          <td class="url">pc/index.html</td>
+          <td class="url">mo/index.html</td>
+          <td class="status">
+            <span class="ing">작업중</span>
+          </td>
+          <td>
+            <p class="log">2024-11-24 작업시작</p>
+          </td>
+        </tr>
+        <!-- 메인(E) -->
+      </tbody>
+    </table>
+    <script>
+      var table = document.getElementById('templateList')
+      var links = table.querySelectorAll('.url')
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var url = this.textContent
+          window.open(url)
+        })
+      })
+    </script>
+  </body>
+</html>
