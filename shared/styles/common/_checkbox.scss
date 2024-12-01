@@ -26,8 +26,9 @@
     > i {
       /* FIXME: 디자인폰트 적용 후 수정 필요*/
       display: inline-block;
-      padding-top: 2px;
-      vertical-align: middle;
+      height: 20px;
+      line-height: 20px;
+      vertical-align: top;
     }
 
     &:before,

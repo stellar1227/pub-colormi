@@ -1,135 +1,198 @@
+ <!-- top 띠배너 -->
+ <aside class="top-banner">
+  <p>친구 추가 시 <b>10%할인</b> 쿠폰</p>
+  <button type="button" class="btn-aside-close">닫기</button>
+</aside>
+
+<!-- //top 띠배너 -->
 <!-- header -->
 <div id="header">
-  <!-- top 띠배너 -->
-  <aside class="top-banner">
-    <p>친구 추가 시 <b>10%할인</b> 쿠폰</p>
-    <button type="button" class="btn-aside-close">닫기</button>
-  </aside>
-
-  <!-- //top 띠배너 -->
-
   <header>
-    <div class="util-menu">
-      <!-- [D] 로그인전 보이는 부분 -->
-      <div class="sign-out-area">
-        <a href="#loginArea" class="btn-login">로그인</a>
-        <div id="loginArea" class="login-area">
-  
+    <div class="util-area">
+      <div class="util-menu">
+        <!-- [D] 로그인전 보이는 부분 -->
+        <div class="sign-out-area">
+          <a href="#loginArea" class="btn-login" onclick="document.querySelector('#loginArea').classList.toggle('active'); return false;">로그인</a>
+          <a href="#" class="link-join">회원가입</a>
         </div>
-        <a href="#" class="link-join">회원가입</a>
-      </div>
-      <!-- // 로그인 전 -->
-      <!-- [D] 로그인 후 보이는 부분 -->
-      <div class="sign-in-area">
-        <p class="welcome"><b>이지원</b>님 환영합니다</p>
-        <a href="#" class="btn-logout">로그아웃</a>
-        <a href="#" class="link-mypage">마이페이지</a>
-      </div>
-      <!-- // 로그인 후 -->
-      <a href="#" class="link-cart">장바구니<span>0</span></a>
-      <div  class="link-family">
-        <strong class="title">브랜드몰</strong>
-        <ul class="site-list">
-          <li><a href="#">바로DM</a></li>
-          <li><a href="#">북베이크</a></li>
-          <li><a href="#">농서남북</a></li>
-        </ul>
+        <!-- // 로그인 전 -->
+        <!-- [D] 로그인 후 보이는 부분 -->
+        <div class="sign-in-area">
+          <p class="welcome"><b>이지원</b>님 환영합니다</p>
+          <a href="#" class="btn-logout">로그아웃</a>
+          <a href="#" class="link-mypage">마이페이지</a>
+        </div>
+        <!-- // 로그인 후 -->
+        <a href="#" class="link-cart"><img src="assets/images/icon/ico-header-cart.svg"><span>0</span></a>
+        <div  class="link-family">
+          <strong class="title" onclick="document.querySelector('.site-list').classList.toggle('active')">
+            <img src="assets/images/icon/ico-header-brand-mall.svg" alt="브랜드몰">
+          </strong>
+          <ul class="site-list">
+            <li><a href="#"><img src="assets/images/img/header-family-baro.png" alt="바로DM"></a></li>
+            <li><a href="#"><img src="assets/images/img/header-family-bookbake.png" alt="북베이크"></a></li>
+            <li><a href="#"><img src="assets/images/img/header-family-donseonambuk.png" alt="농서남북"></a></li>
+          </ul>
+        </div>
+        <!-- 로그인 팝업 -->
+        <div id="loginArea" class="login-area">
+          <h2 class="title">로그인</h2>  
+          <div class="input-box">
+            @@loop('atomic/textInput.html',[{ "type": "text", "placeholder": "아이디" }, { "type": "password", "placeholder": "비밀번호" }] )
+          </div>
+          @@include('atomic/button.html', { 
+            "type": "primary", "text": "로그인", 
+            fullWidth: true, disabled: true
+          })<!-- [D] id/ password 다 채워지면 disabled 삭제 -->
+          <p class="bottom-control">
+            <span>
+              @@include('atomic/checkBox.html', { "id": "autoLogin", "label": "자동 로그인" })
+            </span>
+            <a href="#">아이디/비밀번호 찾기</a>
+            <a href="#">회원가입</a>
+          </p>
+          <button type="button" onClick="document.querySelector('#loginArea').classList.remove('active')" class="btn-close">닫기</button>
+        </div>
+        <!-- //로그인 팝업 -->
       </div>
     </div>
+
+    
     <div class="gnb-area">
-      <h1 class="logo">칼라미</h1>
+      <h1 class="logo"><a href="#"><img src="assets/images/img/header-logo.png" alt="칼라미"></a></h1>
       <nav class="gnb">
         <ul>
-          <li class="menu-depth1">
+          <li class="menu-depth1 active">
+            <a href="#">책자</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">무선제본</a></li>
+              <li><a href="#">중철제본</a></li>
+              <li><a href="#">와이어제본</a></li>
+              <li><a href="#">떡(무선)제본</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <a href="#">출력</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">낱장인쇄(제본없이)</a></li>
+              <li><a href="#">소량책자표시</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <a href="#">명함</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">일반명함</a></li>
+              <li><a href="#">고급명함</a></li>
+              <li><a href="#">특수명함</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <a href="#">홍보물</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">카탈로그</a></li>
+              <li><a href="#">대량전단</a></li>
+              <li><a href="#">소량전단</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <a href="#">안내장</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">초대장</a></li>
+              <li><a href="#">엽서</a></li>
+              <li><a href="#">상품권</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <a href="#">판촉물</a>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">메모장</a></li>
+              <li><a href="#">복사용지</a></li>
+              <li><a href="#">주간플래너</a></li>
+              <li><a href="#">캘린더</a></li>
+              <li><a href="#">봉투</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
-            <ul class="menu-depth2">
-              <li></li>
-            </ul>
+            <a href="#">전체</a>
           </li>
         </ul>
       </nav>
-      <a href="#allMenu" class="btn-all-menu">전체메뉴</a>
-      <nav id="allMenu" class="all-menu">
+      <a href="#allMenu" class="btn-all-menu" onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
+        <span>전체메뉴</span>
+      </a>
+      
+    </div>
+    
+    <nav id="allMenu" class="all-menu">
+      <div>
         <ul class="gnb-menu-list">
           <li class="menu-depth1">
+            <strong>책자</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">무선제본</a></li>
+              <li><a href="#">중철제본</a></li>
+              <li><a href="#">와이어제본</a></li>
+              <li><a href="#">떡(무선)제본</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <strong>출력</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">낱장인쇄</a></li>
+              <li><a href="#">소량책자표시</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <strong>명함</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">일반명함</a></li>
+              <li><a href="#">고급명함</a></li>
+              <li><a href="#">특수명함</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <strong>홍보물</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">카탈로그</a></li>
+              <li><a href="#">대량전단</a></li>
+              <li><a href="#">소량전단</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <strong>안내장</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">초대장</a></li>
+              <li><a href="#">엽서</a></li>
+              <li><a href="#">상품권</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
+            <strong>판촉물</strong>
             <ul class="menu-depth2">
-              <li></li>
-            </ul>
-          </li>
-          <li class="menu-depth1">
-            <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">메모장</a></li>
+              <li><a href="#">복사용지</a></li>
+              <li><a href="#">주간플래너</a></li>
+              <li><a href="#">캘린더</a></li>
+              <li><a href="#">봉투</a></li>
             </ul>
           </li>
         </ul>
         <ul class="etc-menu-list">
           <li class="menu-depth1">
+            <strong>고객센터</strong>
             <ul class="menu-depth2">
-              <li></li>
+              <li><a href="#">인쇄작업규약</a></li>
+              <li><a href="#">출고안내</a></li>
+              <li><a href="#">FAQ</a></li>
             </ul>
           </li>
           <li class="menu-depth1">
-            <ul class="menu-depth2">
-              <li></li>
-            </ul>
+            <strong>브랜드</strong>
           </li>
         </ul>
-      </nav>
-    </div>
+      </div>
+      
+    </nav>
   </header>
 
 </div>
