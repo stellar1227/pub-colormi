@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp",
+    "dev": "NODE_ENV=development gulp",
+    "real": "NODE_ENV=real gulp buildReal",
     "dev-test": "gulp --gulpfile gulpfile.simple.mjs"
   },
   "type": "module",
@@ -23,5 +24,8 @@
     "gulp-sass": "^5.1.0",
     "prettier": "^3.3.3",
     "sass": "^1.80.6"
+  },
+  "devDependencies": {
+    "gulp-replace": "^1.1.4"
   }
 }

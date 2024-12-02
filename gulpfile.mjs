@@ -8,9 +8,11 @@ import cleanCSS from 'gulp-clean-css'
 import fileInclude from 'gulp-file-include'
 import browserSync from 'browser-sync'
 import htmlBeautify from 'gulp-html-beautify'
+import replace from 'gulp-replace' // 경로 수정용 플러그인 추가
 import fs from 'fs'
 import path from 'path'
 
+const isReal = process.env.NODE_ENV === 'real';
 const sassCompiler = gulpSass(sass)
 const bs = browserSync.create()
 
@@ -103,9 +105,15 @@ const stylesParse = (target) => {
     outputStyle: 'expanded',
   }
 
-  return src(pathConfig.src)
-    .pipe(sassCompiler(sassOptions).on('error', sassCompiler.logError))
-    .pipe(cleanCSS())
+	let pipeline = src(pathConfig.src)
+	.pipe(sassCompiler(sassOptions).on('error', sassCompiler.logError))
+	.pipe(cleanCSS());
+
+	if (isReal) {
+		pipeline = pipeline.pipe(replace('../assets/images', '/resources/fe/img'));
+	}
+
+  return pipeline
     .pipe(
       rename({
         basename: target,
@@ -213,3 +221,5 @@ const build = gulp.series(
 )
 
 export default gulp.series(build, serve)
+
+export const buildReal = gulp.series(build);
