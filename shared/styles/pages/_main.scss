@@ -31,12 +31,12 @@
 /* 메인 - 최상단 배너 슬라이드 */
 .main-banner-wrap {
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 64px;
 
   .main-banner {
     .link {
       display: block;
-      height: 465px;
+      height: 400px;
       position: relative;
       text-decoration: none;
       user-select: none;
@@ -56,6 +56,7 @@
         font-weight: 600;
         line-height: normal;
       }
+
       .img {
         position: absolute;
         z-index: 0;
@@ -75,12 +76,15 @@
 
     .main-banner-prev {
       left: 11.3%;
+
       &:after {
         @include mx.svg('/btn/btn-slider-prev-main-banner.svg', 29px, 55px);
       }
     }
+
     .main-banner-next {
       right: 11.3%;
+
       &:after {
         @include mx.svg('/btn/btn-slider-next-main-banner.svg', 29px, 55px);
       }
@@ -90,6 +94,7 @@
       .main-banner-prev {
         left: 3%;
       }
+
       .main-banner-next {
         right: 3%;
       }
@@ -99,12 +104,14 @@
       .main-banner-prev {
         left: 20px;
       }
+
       .main-banner-next {
         right: 20px;
       }
     }
 
     @media screen and (max-width: 1300px) {
+
       .main-banner-prev,
       .main-banner-next {
         display: none;
@@ -191,6 +198,7 @@
 
   .img {
     display: block;
+    width: 100%;
     border-radius: 8px;
     margin-bottom: 14px;
   }
@@ -201,10 +209,11 @@
     padding: 0 10px;
     margin-bottom: 3px;
 
-    > b {
+    >b {
       @include mx.ellipsis(1);
     }
   }
+
   .price {
     display: block;
     padding: 0 10px;
@@ -221,8 +230,8 @@
   gap: 14px;
   margin-bottom: 50px;
 
-  > li {
-    > a {
+  >li {
+    >a {
       display: block;
       text-decoration: none;
       color: #242424;
@@ -234,18 +243,21 @@
       margin-bottom: 20px;
       border-radius: 8px;
     }
+
     .title {
       margin-bottom: 11px;
       font-size: 18px;
       font-weight: 600;
       @include mx.ellipsis(1);
     }
+
     .date {
       font-size: 18px;
     }
   }
+
   &.done {
-    > li img {
+    >li img {
       filter: grayscale(100%);
     }
   }
@@ -277,6 +289,7 @@
           font-weight: 600;
           margin-bottom: 16px;
         }
+
         .desc {
           font-size: 20px;
         }
@@ -294,7 +307,7 @@
   padding: 92px 0 50px;
   background-color: #f6f6f6;
 
-  > .main-contents-wrap {
+  >.main-contents-wrap {
     display: flex;
     gap: 30px;
   }
@@ -315,14 +328,14 @@
     gap: 12px;
     margin-bottom: 40px;
 
-    > li {
+    >li {
       flex-grow: 1;
       width: 250px;
       font-size: 18px;
       font-weight: 400;
       word-break: keep-all;
 
-      > a {
+      >a {
         display: block;
         font-size: 18px;
         color: #242424;
@@ -335,12 +348,14 @@
         border-radius: 8px;
         margin-bottom: 20px;
       }
+
       .title {
         margin-bottom: 13px;
         font-weight: 600;
         color: #242424;
         @include mx.ellipsis(1);
       }
+
       .desc {
         white-space: pre-line;
         line-height: 33px;
@@ -354,24 +369,30 @@
 
     .title-wrap {
       position: relative;
+
       button {
         font-size: 0;
       }
 
       .brand-slide {
+
         &-prev,
         &-next {
           width: 35px;
         }
+
         &-prev {
           left: auto;
           right: calc(35px + 10px);
+
           &:after {
             @include mx.svg('/btn/btn-slider-prev-brand-story.svg', 11px, 21px);
           }
         }
+
         &-next {
           right: 0;
+
           &:after {
             @include mx.svg('/btn/btn-slider-next-brand-story.svg', 11px, 21px);
           }
@@ -425,15 +446,17 @@
       }
     }
   }
+
   /* 브랜드 스토리(E) */
 }
+
 /* 메인 - 콘텐츠/브랜드 스토리(E) */
 
 /* 메인 - 공지사항 */
 .main-notice {
   padding: 36px 0;
 
-  > .main-contents-wrap {
+  >.main-contents-wrap {
     position: relative;
     display: flex;
     gap: 68px;
@@ -466,7 +489,7 @@
     flex-grow: 1;
     padding-right: 100px;
 
-    > li:not(:last-child) {
+    >li:not(:last-child) {
       margin-bottom: 24px;
     }
 
@@ -483,6 +506,7 @@
         font-size: 20px;
         font-weight: 600;
       }
+
       .date {
         font-size: 20px;
       }
@@ -512,8 +536,7 @@
         font-weight: 600;
         text-decoration: none;
 
-        $icons:
-          'estimate' 52px 56px,
+        $icons: 'estimate' 52px 56px,
           'guide' 57px 57px,
           'shipment' 88px 55px,
           'faq' 55px 57px,
