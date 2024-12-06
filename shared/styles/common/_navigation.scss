@@ -1,7 +1,7 @@
 .navigation {
   position: fixed;
   bottom: 20px;
-  right: calc((100% - 1140px) / 2 - 187px);
+  right: 3.5vw;
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -9,8 +9,8 @@
 
   .navigation-button {
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
     border-radius: 100%;
     overflow: hidden;
     text-indent: -999px;
@@ -18,12 +18,15 @@
     &.button-back {
       background-image: url('../assets/images/icon/ico-wing-prev.svg');
     }
+
     &.button-event {
       background-image: url('../assets/images/icon/ico-wing-event.svg');
     }
+
     &.button-talk {
       background-image: url('../assets/images/icon/ico-wing-kakao.svg');
     }
+
     &.button-top {
       background-image: url('../assets/images/icon/ico-wing-top.svg');
     }

@@ -1,5 +1,5 @@
- <!-- top 띠배너 -->
- <aside class="top-banner">
+<!-- top 띠배너 -->
+<aside class="top-banner">
   <p>친구 추가 시 <b>10%할인</b> 쿠폰</p>
   <button type="button" class="btn-aside-close">닫기</button>
 </aside>
@@ -12,7 +12,8 @@
       <div class="util-menu">
         <!-- [D] 로그인전 보이는 부분 -->
         <div class="sign-out-area">
-          <a href="#loginArea" class="btn-login" onclick="document.querySelector('#loginArea').classList.toggle('active'); return false;">로그인</a>
+          <a href="#loginArea" class="btn-login"
+            onclick="document.querySelector('#loginArea').classList.toggle('active'); return false;">로그인</a>
           <a href="#" class="link-join">회원가입</a>
         </div>
         <!-- // 로그인 전 -->
@@ -24,7 +25,7 @@
         </div>
         <!-- // 로그인 후 -->
         <a href="#" class="link-cart"><img src="assets/images/icon/ico-header-cart.svg"><span>0</span></a>
-        <div  class="link-family">
+        <div class="link-family">
           <strong class="title" onclick="document.querySelector('.site-list').classList.toggle('active')">
             <img src="assets/images/icon/ico-header-brand-mall.svg" alt="브랜드몰">
           </strong>
@@ -36,13 +37,14 @@
         </div>
         <!-- 로그인 팝업 -->
         <div id="loginArea" class="login-area">
-          <h2 class="title">로그인</h2>  
+          <h2 class="title">로그인</h2>
           <div class="input-box">
-            @@loop('atomic/textInput.html',[{ "type": "text", "placeholder": "아이디" }, { "type": "password", "placeholder": "비밀번호" }] )
+            @@loop('atomic/textInput.html',[{ "type": "text", "placeholder": "아이디" }, { "type": "password",
+            "placeholder": "비밀번호" }] )
           </div>
-          @@include('atomic/button.html', { 
-            "type": "primary", "text": "로그인", 
-            fullWidth: true, disabled: true
+          @@include('atomic/button.html', {
+          "type": "primary", "text": "로그인",
+          fullWidth: true, disabled: true
           })<!-- [D] id/ password 다 채워지면 disabled 삭제 -->
           <p class="bottom-control">
             <span>
@@ -51,13 +53,14 @@
             <a href="#">아이디/비밀번호 찾기</a>
             <a href="#">회원가입</a>
           </p>
-          <button type="button" onClick="document.querySelector('#loginArea').classList.remove('active')" class="btn-close">닫기</button>
+          <button type="button" onClick="document.querySelector('#loginArea').classList.remove('active')"
+            class="btn-close">닫기</button>
         </div>
         <!-- //로그인 팝업 -->
       </div>
     </div>
 
-    
+
     <div class="gnb-area">
       <h1 class="logo"><a href="#"><img src="assets/images/img/header-logo.png" alt="칼라미"></a></h1>
       <nav class="gnb">
@@ -117,12 +120,13 @@
           </li>
         </ul>
       </nav>
-      <a href="#allMenu" class="btn-all-menu" onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
+      <a href="#allMenu" class="btn-all-menu"
+        onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
         <span>전체메뉴</span>
       </a>
-      
+
     </div>
-    
+
     <nav id="allMenu" class="all-menu">
       <div>
         <ul class="gnb-menu-list">
@@ -188,10 +192,11 @@
           </li>
           <li class="menu-depth1">
             <strong>브랜드</strong>
+            <strong>제품소개</strong>
           </li>
         </ul>
       </div>
-      
+
     </nav>
   </header>
 
