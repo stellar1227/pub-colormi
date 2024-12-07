@@ -1,11 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <!-- head.html 파일 포함 -->
-  @@include('head-mo.html')
-  <body>
-    <!-- header.html 파일 포함 -->
-    @@include('header.html')
+    @@include('head-mo.html', {title: "칼라미"})
+    <body>
 
-    <h1>MO asd</h1>
-  </body>
+        
+    <!-- wrap(S) -->
+    <div id="wrap">
+      <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+      </div>
+
+      <!-- @@include('header.html') -->
+      <div id="container">
+          
+        <!-- 메인 배너(S) -->
+        <div class="main-banner-wrap">
+          <div class="swiper swiper-type1 main-banner">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <a href="" class="link">
+                  <div class="title">
+                    제본없는 낱장인쇄도<br />디지털로 깔끔하게
+                    <div class="desc">친환경 용지 친환경 잉크 사용</div>
+                  </div>
+                  <img class="img" src="assets/images/img/mo/main-banner02.jpg" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" class="link">
+                  <!-- [D] 디자인상 폰트 색상이 하얀색만 있어서, 
+                   이미지 밝기에 따라 텍스트 안보일 수 있으니 임시로 만들어두었습니다.
+                   사진이 밝은 배경인 경우, title 에 'invert' 클래스를 추가해주세요. -->
+                  <div class="title invert">
+                    사진으로 만드는 엽서<br/>소중한 추억 간직하기
+                    <div class="desc">친환경 용지 친환경 잉크 사용</div>
+                  </div>
+                  <img class="img" src="assets/images/img/mo/main-banner01.jpg" alt="">
+                </a>
+              </div>
+            </div>
+
+            <div class="main-banner-prev swiper-button-prev"></div>
+            <div class="main-banner-next swiper-button-next"></div>
+          </div>
+
+          <div class="main-banner-pagination pagination-type1 swiper-pagination"></div>
+        </div>
+        <!-- 메인 배너(E) -->
+
+        <!-- 인기제품(S) -->
+        <div class="main-contents-wrap main-popular">
+          <h2 class="main-section-title">인기제품</h2>
+
+          <!-- [D] 더보기 클릭 전 class: more-hide / 클릭 후: more-show -->
+          <ul class="popular-list more-hide">
+            @@loop('pages/common/popular-card-mo.html', [
+              { imagePath: "assets/images/temp/mo/popular-01.jpg", title: "책자표지"},
+              { imagePath: "assets/images/temp/mo/popular-02.jpg", title: "캘린더"},
+              { imagePath: "assets/images/temp/mo/popular-03.jpg", title: "초대장"},
+              { imagePath: "assets/images/temp/mo/popular-04.jpg", title: "카탈로그"},
+              { imagePath: "assets/images/temp/mo/popular-01.jpg", title: "책자표지"},
+              { imagePath: "assets/images/temp/mo/popular-02.jpg", title: "캘린더"},
+              { imagePath: "assets/images/temp/mo/popular-03.jpg", title: "초대장"},
+              { imagePath: "assets/images/temp/mo/popular-04.jpg", title: "카탈로그"},
+            ])
+          </ul>
+          <button type="button" class="btn-more-popular">더보기</button>
+        </div>
+        <!-- 인기제품(E) -->
+
+        <!-- 신제품(S) -->
+        <div class="main-new">
+          <h2 class="main-section-title">신제품</h2>
+
+          <div class="swiper swiper-type1 main-new-slide">
+            <div class="swiper-wrapper"> 
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <a href="" class="link">
+                  <div class="text">
+                    <span class="title">제본없는 낱장인쇄도</span>
+                    <span class="desc">디지털로 깔끔하게</span>
+                  </div>
+                  <img class="img" src="assets/images/img/mo/main-new01.jpg" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" class="link">
+                  <div class="text">
+                    <span class="title">맞춤형 엽서</span>
+                    <span class="desc">여행사진으로 만드는 나만의 엽서</span>
+                  </div>
+                  <img class="img" src="assets/images/img/mo/main-new02.jpg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 신제품(E) -->
+
+        <!-- 이벤트(S) -->
+        <div class="main-contents-wrap">
+          <h2 class="main-section-title">
+            이벤트
+            <a href="#" class="btn-main-more">더보기 +</a>
+          </h2>
+
+          <ul class="event-list">
+            @@loop('pages/common/event-card-mo.html', [
+              { imagePath: "assets/images/temp/mo/event-01.jpg"},
+            ])
+          </ul>
+        </div>
+        <!-- 이벤트(E) -->
+
+        <!-- 콘텐츠/브랜드 스토리(S) -->
+        <div class="main-contents-brand">
+          <!-- 콘텐츠(S) -->
+          <div class="main-contents">
+            <h2 class="main-section-title">
+              콘텐츠
+            </h2>
+            <ul class="contents-card-wrap">
+              <li>
+                <a href="#">
+                  <img class="img" src="assets/images/temp/main-contents-01.png" alt="">
+                  <h3 class="title">판매 업체 소개</h3>
+                  <div class="desc">지속적으로 판매상품 개편, 신제품 개발에 몰두하고있습니다.</div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img" src="assets/images/temp/main-contents-02.png" alt="">
+                  <h3 class="title">오프라인 로드샵 방문기</h3>
+                  <div class="desc">현장접수, 디자인, 제작, 출고까지 원스톱으로 진행합니다.</div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img" src="assets/images/temp/main-contents-02.png" alt="">
+                  <h3 class="title">판매 업체 소개</h3>
+                  <div class="desc">현장접수, 디자인, 제작, 출고까지 원스톱으로 진행합니다.</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- 콘텐츠(E) -->
+          
+          <div class="main-contents-wrap">
+            <!-- 브랜드 스토리(S) -->
+            <div class="main-brand-story">
+              <div class="title-wrap">
+                <h2 class="main-section-title">브랜드 스토리</h2>
+                <a href="" class="btn-main-more">더보기 +</a>
+              </div>
+
+              <div class="figure">
+                <div class="swiper swiper-brand">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="img" src="assets/images/img/mo/main-brand-story01.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="img" src="assets/images/img/mo/main-brand-story02.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="img" src="assets/images/img/mo/main-brand-story03.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="img" src="assets/images/img/mo/main-brand-story04.jpg" alt=""></div>
+                  </div>
+                </div>
+
+                <div class="link">
+                  <div class="text">
+                    <b class="title">칼라미 : COLOR + 美</b>
+                    <p class="desc">색을 아름답게 표현하겠다는 의지를 실천하는 곳<br />이곳은 고품질 디지털 인쇄 전문 칼라미입니다.</p>
+                  </div>
+                </div>
+
+                <div class="swiper-brand-pagination pagination-type1 swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- 브랜드 스토리(E) -->
+          </div>
+        </div>
+        <!-- 콘텐츠/브랜드 스토리(E) -->
+
+        <!-- 퀵메뉴(S) -->
+        <div class="main-quick-menu">
+          <div class="main-contents-wrap">
+            <ul class="main-quick-menu-list">
+              <li>
+                <a href="" class="estimate">견적문의</a>
+              </li>
+              <li>
+                <a href="" class="guide">작업가이드</a>
+              </li>
+              <li>
+                <a href="" class="shipment">배송안내</a>
+              </li>
+              <li>
+                <a href="" class="faq">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 퀵메뉴(E) -->
+        
+        <!-- 공지사항(S) -->
+        <div class="main-notice">
+          <div class="main-contents-wrap">
+            <h3 class="main-notice-title"><i>공지사항</i></h3>
+
+            <!-- [D] 더보기 링크 -->
+            <a href="#" class="btn-main-more" aria-label="더보기">+</a>
+
+            <ul class="main-notice-list">
+              <li>
+                <a href="#" class="link">
+                  <span class="title">[사이트 오픈 기념] 12월 이벤트 당첨자 발표</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 공지사항(E) -->
+
+        
+
+      </div>
+
+      <!-- @@include('footer.html') -->
+    </div>
+    <!-- wrap(E) -->
+
+     
+    <script>
+      // 메인 배너 슬라이드
+      const swiper = new Swiper('.main-banner', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+        },
+        pagination: {
+          enabled: true,
+          el: '.main-banner-pagination',
+        },
+        navigation: {
+          nextEl: '.main-banner-next',
+          prevEl: '.main-banner-prev',
+        },
+        scrollbar: { 
+          enable: false 
+        }
+      });
+      
+      // 신제품 슬라이드
+      const swiperNew = new Swiper('.main-new-slide', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+        },
+        pagination: {
+          enabled: true,
+          el: '.main-new-pagination',
+        },
+        scrollbar: { 
+          enable: false 
+        }
+      });
+
+      // 브랜드 스토리 슬라이드
+      const swiperBrand = new Swiper('.swiper-brand', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+        },
+        pagination: {
+          enabled: true,
+          el: '.swiper-brand-pagination',
+        },
+        scrollbar: { 
+          enable: false 
+        }
+      });
+
+      // 인기제품 더보기
+      const btnMorePopular = document.querySelector('.btn-more-popular');
+      const popularList = document.querySelector('.popular-list');
+      btnMorePopular.addEventListener('click', function() {
+        const isOpen = popularList.classList.contains('more-show');
+        popularList.classList.toggle('more-show', !isOpen);
+        popularList.classList.toggle('more-hide', isOpen);
+      });
+    </script>
+    </body>
 </html>

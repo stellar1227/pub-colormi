@@ -1,4 +1,24 @@
+@use 'pages/mo';
+@use 'pages/main-mo';
+
 html,
 body {
   width: 100%;
+  -webkit-text-size-adjust: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  :focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  /* iOS 15+ 롱탭 차단 */
+  img,
+  a {
+    -webkit-user-drag: none;
+  }
+
+  textarea {
+    resize: none;
+  }
 }
