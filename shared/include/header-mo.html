@@ -1,0 +1,75 @@
+ <!-- top 띠배너 -->
+ <aside class="top-banner">
+  <p>친구 추가 시 <b>10%할인</b> 쿠폰</p>
+  <button type="button" class="btn-aside-close">닫기</button>
+</aside>
+
+<!-- //top 띠배너 -->
+<!-- header -->
+<div id="header">
+  <header>
+    
+    <div class="gnb-area">
+      <div class="util">
+        <a href="#sideMenu" class="btn-all-menu" onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
+          <span>전체메뉴</span>
+        </a>
+        <h1 class="logo"><a href="#"><img src="assets/images/img/header-logo.png" alt="칼라미"></a></h1>
+        <button type="login" class="btn-login" onclick="document.querySelector('#loginArea').classList.add('active'); document.documentElement.classList.add('freeze')">로그인</button>
+      </div>
+      <nav class="gnb">
+        <ul>
+          <li class="menu-depth1 active">
+            <a href="gnbSub1.html">책자</a>
+          </li>
+          <li class="menu-depth1">
+            <a href="gnbSub2.html">출력</a>
+          </li>
+          <li class="menu-depth1">
+            <a href="gnbSub3.html">명함</a>
+          </li>
+          <li class="menu-depth1">
+            <a href="gnbSub4.html">홍보물</a>
+          </li>
+          <li class="menu-depth1">
+            <a href="gnbSub5.html">안내장</a>
+          </li>
+          <li class="menu-depth1">
+            <a href="gnbSub6.html">판촉물</a>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+    <!-- 로그인 팝업 -->
+    <div id="loginArea" class="login-area">
+      <div class="login-box">
+        <h2 class="title">로그인</h2>  
+        <div class="input-box">
+          @@loop('atomic/textInput.html',[{ "type": "text", "placeholder": "아이디" }, { "type": "password", "placeholder": "비밀번호" }] )
+        </div>
+        @@include('atomic/button.html', { 
+          "type": "primary", "text": "로그인", 
+          fullWidth: true, disabled: true
+        })<!-- [D] id/ password 다 채워지면 disabled 삭제 -->
+        <p class="bottom-control">
+          <span>
+            @@include('atomic/checkBox.html', { "id": "autoLogin", "label": "자동 로그인" })
+          </span>
+          <a href="#">아이디/비밀번호 찾기</a>
+          <a href="#">회원가입</a>
+        </p>
+        <button type="button" onClick="document.querySelector('#loginArea').classList.remove('active'); document.documentElement.classList.remove('freeze')" class="btn-close">닫기</button>
+      </div>
+      
+    </div>
+    <!-- //로그인 팝업 -->
+    <div id="sideMenu">
+      <nav>
+
+      </nav>
+    </div>
+    
+  </header>
+</div>
+<!-- //header -->

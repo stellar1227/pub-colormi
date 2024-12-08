@@ -24,3 +24,19 @@ body {
     resize: none;
   }
 }
+
+html.freeze{
+  height:100%;
+  overflow: hidden;
+}
+
+#wrap{
+  width:100%;
+}
+#container{
+
+}
+
+#content{
+
+}
