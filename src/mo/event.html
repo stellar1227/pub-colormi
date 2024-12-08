@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+  <!-- head.html 파일 포함 -->
+  @@include('head-mo.html', {title: "칼라미"})
+
+  <body>
+    <div id="wrap">
+      <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+      </div>
+      <!-- header.html 파일 들어갈 자리 -->
+      <div id="container" class="event-container">
+        <div id="content">
+          <h2 class="event-section-title">이벤트</h2>
+          <div class="tab-container">
+            <div class="tab active" data-tab="1">진행중 이벤트</div>
+            <div class="tab" data-tab="2">종료된 이벤트</div>
+          </div>
+          <div class="tab-content active" data-tab="1">
+            <ul class="event-list">
+              @@loop('pages/common/event-card-mo.html', [
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+              ])
+            </ul>
+          </div>
+          <div class="tab-content" data-tab="2">
+            <ul class="event-list done">
+              @@loop('pages/common/event-card-mo.html', [
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+                { imagePath: "assets/images/temp/mo/event-01.jpg"},
+                { imagePath: "assets/images/temp/mo/event-02.jpg"},
+              ])
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- footer.html 파일 들어갈 자리 -->
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $('.tab').on('click', function () {
+          const targetTab = $(this).data('tab')
+          $('.tab').removeClass('active')
+          $(this).addClass('active')
+
+          $('.tab-content').removeClass('active')
+          $(`.tab-content[data-tab="${targetTab}"]`).addClass('active')
+        })
+      })
+    </script>
+  </body>
+</html>

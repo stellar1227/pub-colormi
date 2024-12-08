@@ -1,0 +1,153 @@
+.brandStory-container {
+}
+
+.event-container {
+  padding-top: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  .event-section-title {
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a2a2a;
+    letter-spacing: -1px;
+  }
+
+  .event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 4px;
+    width: 100%;
+    & > li {
+      width: calc(50% - 2px);
+    }
+    .text {
+      display: block;
+    }
+  }
+
+  .tab-container {
+    display: flex;
+    border-bottom: none;
+    width: 100%;
+    margin: 0 auto 15px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 6px 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #adadad;
+    background-color: #e9e9e9;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    cursor: pointer;
+
+    &.active {
+      background-color: #be1a51;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  .tab-content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.gnbAll-container {
+}
+
+.gnbSub-container {
+  .links-content {
+    display: flex;
+    margin: 0 auto;
+    padding: 29px 16px 30px;
+    gap: 22px;
+    max-width: 100%;
+    overflow-x: auto;
+
+    & > li {
+      font-size: 14px;
+      font-weight: bold;
+      color: #3e3e3e;
+      text-align: center;
+      img {
+        display: block;
+        width: 75px;
+        height: 75px;
+        border: 1px #676767 solid;
+        border-radius: 50%;
+      }
+      &.active a {
+        color: #e62263;
+      }
+    }
+    a {
+      color: #9b9b9b;
+      text-decoration: none;
+      &:hover {
+        color: #4e4e4e;
+      }
+    }
+  }
+
+  .good-list {
+    display: flex;
+    flex-direction: column;
+
+    .img-box {
+      position: relative;
+      padding-top: 40.0552486%;
+      overflow: hidden;
+    }
+    .img {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    .text-box {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 24px;
+    }
+    .good-title {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      color: #242424;
+    }
+    p {
+      padding-top: 12px;
+      font-size: 12px;
+      line-height: 1.75;
+      color: #3e3e3e;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+    .good-button {
+      position: absolute;
+      width: 64px;
+      height: 19px;
+      right: 16px;
+      top: 0;
+      border-radius: 4px;
+      background: #707070;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: -1px;
+    }
+  }
+}
