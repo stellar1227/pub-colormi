@@ -19,11 +19,98 @@
     <div id="skipnavi">
       <a href="#content">본문 바로가기</a>
     </div>
+
+    <!-- top 띠배너 -->
+    <aside class="top-banner">
+      <p>친구 추가 시 <b>10%할인</b> 쿠폰</p>
+      <button type="button" class="btn-aside-close">닫기</button>
+    </aside>
+
+    <!-- //top 띠배너 -->
+    <!-- header -->
+    <div id="header">
+      <header>
+
+        <div class="gnb-area">
+          <div class="util">
+            <a href="#sideMenu" class="btn-all-menu" onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
+              <span>전체메뉴</span>
+            </a>
+            <h1 class="logo"><a href="#"><img src="assets/images/img/header-logo.png" alt="칼라미"></a></h1>
+            <button type="login" class="btn-login" onclick="document.querySelector('#loginArea').classList.add('active'); document.documentElement.classList.add('freeze')">로그인</button>
+          </div>
+          <nav class="gnb">
+            <ul>
+              <li class="menu-depth1 active">
+                <a href="gnbSub1.html">책자</a>
+              </li>
+              <li class="menu-depth1">
+                <a href="gnbSub2.html">출력</a>
+              </li>
+              <li class="menu-depth1">
+                <a href="gnbSub3.html">명함</a>
+              </li>
+              <li class="menu-depth1">
+                <a href="gnbSub4.html">홍보물</a>
+              </li>
+              <li class="menu-depth1">
+                <a href="gnbSub5.html">안내장</a>
+              </li>
+              <li class="menu-depth1">
+                <a href="gnbSub6.html">판촉물</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+        <!-- 로그인 팝업 -->
+        <div id="loginArea" class="login-area">
+          <div class="login-box">
+            <h2 class="title">로그인</h2>
+            <div class="input-box">
+              <div class="form-field @@class">
+                <input type="text" class="input-field" placeholder="아이디" />
+
+              </div>
+              <div class="form-field @@class">
+                <input type="password" class="input-field" placeholder="비밀번호" />
+
+              </div>
+
+            </div>
+            <button class="button primary  full-width" disabled>
+              로그인
+            </button>
+            <!-- [D] id/ password 다 채워지면 disabled 삭제 -->
+            <p class="bottom-control">
+              <span>
+                <label class="form-checkbox  ">
+                  <input type="checkbox" name="@@name" class="checkbox" />
+                  <span class="label" id="자동 로그인Id"><i>자동 로그인</i></span>
+                </label>
+
+              </span>
+              <a href="#">아이디/비밀번호 찾기</a>
+              <a href="#">회원가입</a>
+            </p>
+            <button type="button" onClick="document.querySelector('#loginArea').classList.remove('active'); document.documentElement.classList.remove('freeze')" class="btn-close">닫기</button>
+          </div>
+
+        </div>
+        <!-- //로그인 팝업 -->
+        <div id="sideMenu">
+          <nav>
+
+          </nav>
+        </div>
+
+      </header>
+    </div>
+    <!-- //header -->
     <!-- header.html 파일 들어갈 자리 -->
     <div id="container" class="gnbSub-container">
       <div class="links-container">
         <ul class="links-content">
-          <li>홍보물</li>
           <li class="active">
             <a href="#tab1">
               <img src="assets/images/temp/gnb/sub0101.jpg" alt="" class="img" />
@@ -101,6 +188,90 @@
         </div>
       </div>
     </div>
+
+    <div class="navigation" id="navigation">
+      <button type="button" class="navigation-button button-back">뒤로가기</button>
+      <a href="event.html" class="navigation-button button-event">이벤트</a>
+      <button type="button" class="navigation-button button-talk">
+        Talk 문의하기
+      </button>
+      <button type="button" class="navigation-button button-top">TOP</button>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const topButton = document.getElementById('navigation')
+        const footer = document.querySelector('#footer')
+
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY
+          const windowHeight = window.innerHeight
+          const footerTop = footer.getBoundingClientRect().top + scrollY
+
+          if (scrollY + windowHeight > footerTop) {
+            topButton.classList.add('navigation-ab')
+            topButton.style.bottom = `${scrollY + windowHeight - footerTop + 72}px`
+          } else {
+            topButton.classList.remove('navigation-ab')
+            topButton.style.bottom = '72px'
+          }
+        })
+      })
+    </script>
+
+    <!-- footer -->
+    <div id="footer">
+      <footer>
+        <div class="footer-contact">
+          <p class="logo">billpost</p>
+          <div class="sns">
+            <a href="#"><img src="assets/images/icon/ico-footer-facebook.svg" alt="facebook"></a>
+            <a href="#"><img src="assets/images/icon/ico-footer-instagram.svg" alt="instagram"></a>
+            <a href="#"><img src="assets/images/icon/ico-footer-naver-blog.svg" alt="blog"></a>
+          </div>
+        </div>
+        <div class="footer-info">
+          <dl class="company">
+            <dt>빌포스트 (주)</dt>
+            <dd>
+              <p>
+                <span>대표: 하봉채채채채채채</span>
+                <span>사업자등록번호 : 220-81-94270 (종사업장번호 : 003)</span>
+                <span>개인정보보호책임자 : 김연걸</span>
+              </p>
+              <p>본사 : 서울특별시 광진구 자양로 76 (동서울우편집중국 내) 1층 빌포스트</p>
+              <p>충무로지점(공장) : 서울특별시 중구 충무로 13 (충무로3가) 엘크루메트로시티 지하2층 201~208호</p>
+              <p>로드샵(출고실) : 서울특별시 중구 충무로 27-2 (초동) 1층 칼라미</p>
+              <p>
+                <span>통신판매업신고 제 2005-서울광진-1941호</span>
+                <span>E-Mail : info@billpost.co.kr</span>
+              </p>
+            </dd>
+          </dl>
+          <ul class="policy-info-list">
+            <li><a href="#">회사소개asd</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">사업자등록증</a></li>
+            <li><a href="#">통장사본</a></li>
+          </ul>
+        </div>
+        <div class="footer-cs">
+          <strong>고객 상담 센터</strong>
+          <p>
+            <span>제작 : 02-2266-0671</span>
+            <span>회계 : 02-2024-3304</span>
+          </p>
+          <strong>출고 안내</strong>
+          <p>
+            <span>평일 : 9:00 - 20:00</span>
+            <span>오후 8시 이후 공장 출고 가능</span>
+          </p>
+        </div>
+      </footer>
+      <p class="copyrights">&copy; 2018. BILLPOST.All Rigths Reserved.</p>
+    </div>
+    <!-- //footer -->
     <!-- footer.html 파일 들어갈 자리 -->
   </div>
 </body>
