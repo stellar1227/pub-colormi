@@ -185,12 +185,18 @@
 
   a {
     display: block;
+    overflow: hidden;
+
     font-size: 16px;
     text-decoration: none;
   }
 
   .img {
     display: block;
+    width:100%;
+    //임시코드 (이미지 비율 안맞아서)
+    height:275px;
+    
     border-radius: 8px;
     margin-bottom: 14px;
   }
@@ -207,31 +213,34 @@
     }
     .size{
       display:flex;
-      gap:10px;
+      gap:4px;
       i{
         background:#c6c6c6;
         border-radius:50%;
         color:#fff;
-        font-size:15px;
-        line-height:28px;
-        padding:0 4px;
+        font-size:12px;
+        line-height:20px;
+        padding:0 3px;
         &.coast{
           border-radius:8px;
-          padding:0 6px;
+          padding:0 5px;
         }
       }
       
     }
     .docs{
       display: flex;
-      gap:10px;
+      gap:4px;
       i{
         background:#8ad8ef;
         border-radius:8px;
         color:#fff;
-        font-size:13px;
-        line-height:28px;
-        padding:0 6px;
+        font-size:12px;
+        line-height:20px;
+        padding:0 5px;
+        &.etc{
+          background-color:#98bac4;
+        }
       }
     }
   }

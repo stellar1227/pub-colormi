@@ -102,6 +102,26 @@
     .img {
       width: 100%;
     }
+    .size{
+      gap:10px;
+      i{
+        font-size:15px;
+        line-height:28px;
+        padding:0 4px;
+        &.coast{
+          border-radius:8px;
+          padding:0 6px;
+        }
+      }
+    }
+    .docs{
+      gap:10px;
+      i{
+        font-size:13px;
+        line-height:28px;
+        padding:0 6px;
+      }
+    }
   }
 }
 
