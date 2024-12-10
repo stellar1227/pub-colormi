@@ -34,14 +34,17 @@
   margin-bottom: 80px;
 
   .main-banner {
+    
     .link {
       display: block;
-      height: 465px;
+      height: 400px;
       position: relative;
       text-decoration: none;
       user-select: none;
 
       .title {
+        transition: transform 0.6s ease-in-out 0.2s;
+        transform:translateX(-100%);
         display: block;
         height: 100%;
         position: relative;
@@ -55,6 +58,12 @@
         font-size: 35px;
         font-weight: 600;
         line-height: normal;
+        span{
+          margin-top: 4px;
+          display: block;
+          font-weight:400;
+          font-size:26px;
+        }
       }
       .img {
         position: absolute;
@@ -62,6 +71,16 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+      }
+
+      
+    }
+    .swiper-slide {
+      overflow: hidden;
+    }
+    .swiper-slide-active{
+      .title{
+        transform:translateX(0);
       }
     }
 
@@ -111,6 +130,7 @@
       }
     }
   }
+
 
   .main-banner-pagination.swiper-pagination {
     bottom: 15px;
