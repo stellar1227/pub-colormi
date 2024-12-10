@@ -58,23 +58,35 @@
     }
     .footer-cs {
       margin-left: auto;
-      text-align: right;
+      width:auto;
       strong {
         display: block;
         font-size: 21px;
         font-weight: 600;
       }
       p {
-        margin-top: 14px;
+        margin-top: 10px;
         &:first-of-type {
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
         span {
           display: block;
           font-size: 16px;
-          margin-top: 8px;
+          margin-top: 2px;
           &:first-child {
             margin-top: 0;
+          }
+          display:flex;
+          gap:3px;
+          & > i {
+            &:first-child{
+              width:60px;
+            }
+            width:110px;
+            b{
+              display: block;
+              font-size:12px;
+            }
           }
         }
       }
