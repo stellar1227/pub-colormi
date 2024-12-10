@@ -16,36 +16,54 @@
           <h2 class="gnb-section-title">책자</h2>
           <ul class="popular-list">
             @@loop('pages/common/popular-card.html', [
-              { imagePath: "assets/images/img/popular-all11.jpg", title: "무선제본"},
-              { imagePath: "assets/images/img/popular-all10.jpg", title: "중철제본"},
-              { imagePath: "assets/images/img/popular-all09.jpg", title: "일반명함"},
-              { imagePath: "assets/images/img/popular-all07.jpg", title: "초대장"},
+              { imagePath: "assets/images/img/popular-all11.jpg", title: "무선제본", size: true, a4: true, a5:true, b5:true, free:true, price: "6,820"},
+              { imagePath: "assets/images/img/popular-all10.jpg", title: "중철제본", size: true, a4: true, a5:true, b5:true, free:true, price: "5,720"},
+              { imagePath: "assets/images/img/popular-all09.jpg", title: "일반명함", size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "8,580"},
+              { imagePath: "assets/images/img/popular-all07.jpg", title: "초대장", size: true, a4: true, a5:true, b5:true, free:true, price: "7,920"},
             ])
           </ul>
 
           <h2 class="gnb-section-title">출력</h2>
           <ul class="popular-list">
             @@loop('pages/common/popular-card.html', [
-              { imagePath: "assets/images/img/popular-all08.jpg", title: "중철제본"},
-              { imagePath: "assets/images/img/popular-all06.jpg", title: "와이어제본"},
+              { imagePath: "assets/images/img/popular-all08.jpg", title: "낱장인쇄" ,size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "330"},
+              { imagePath: "assets/images/img/popular-all06.jpg", title: "소량책자표지",size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "330"},
             ])
           </ul>
 
           <h2 class="gnb-section-title">명함</h2>
           <ul class="popular-list">
             @@loop('pages/common/popular-card.html', [
-              { imagePath: "assets/images/img/popular-all04.jpg", title: "중철제본"},
-              { imagePath: "assets/images/img/popular-all05.jpg", title: "와이어제본"},
-              { imagePath: "assets/images/img/popular-all02.jpg", title: "일반명함"},
+              { imagePath: "assets/images/img/popular-all04.jpg", title: "일반명함", docs:true,snow:true, price:"1,430"},
+              { imagePath: "assets/images/img/popular-all05.jpg", title: "고급명함", docs:true, frr:true,bnb:true,rdv:true, msm:true,snow:true},
+              { imagePath: "assets/images/img/popular-all02.jpg", title: "특수명함", docs:true,efx:true, gold:true, hrgr:true},
             ])
           </ul>
 
           <h2 class="gnb-section-title">홍보물</h2>
           <ul class="popular-list">
             @@loop('pages/common/popular-card.html', [
-              { imagePath: "assets/images/img/popular-all01.jpg", title: "중철제본"},
-              { imagePath: "assets/images/img/popular-all03.jpg", title: "와이어제본"},
-              { imagePath: "assets/images/img/popular-all03.jpg", title: "일반명함"},
+              { imagePath: "assets/images/img/popular-all01.jpg", title: "카탈로그", size: true, a4: true, a5:true, b5:true, free:true, price: "6,820"},
+              { imagePath: "assets/images/img/popular-all03.jpg", title: "대량전단", size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "28,000"},
+              { imagePath: "assets/images/img/popular-all12.jpg", title: "소량전단", size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "1,300"},
+            ])
+          </ul>
+          <h2 class="gnb-section-title">안내장</h2>
+          <ul class="popular-list">
+            @@loop('pages/common/popular-card.html', [
+              { imagePath: "assets/images/img/popular-all13.jpg", title:"엽서", docs:true, white:true, snow:true, price:"2,970" },
+              { imagePath: "assets/images/img/popular-all14.jpg", title: "초대장", docs:true, snow:true, rdv:true, price: "5,830"},
+              { imagePath: "assets/images/img/popular-all15.jpg", title: "상품권", docs:true, white:true, snow:true, rdv:true, price: "1,100" },
+            ])
+          </ul>
+          <h2 class="gnb-section-title">판촉물</h2>
+          <ul class="popular-list">
+            @@loop('pages/common/popular-card.html', [
+              { imagePath: "assets/images/img/popular-all16.jpg", title: "메모장 & 커버", price: "7000"},
+              { imagePath: "assets/images/img/popular-all17.jpg", title: "복사용지 BOX", size: true, a4:true, a3:true, price:"24,310"},
+              { imagePath: "assets/images/img/popular-all18.jpg", title: "주간플래너", price:"6,600"},
+              { imagePath: "assets/images/img/popular-all19.jpg", title: "캘린더 10개", price: "33,000"},
+              { imagePath: "assets/images/img/popular-all20.jpg", title: "봉투 10매", docs:true, env:true, jack:true, large:true, price:"3,700" },
             ])
           </ul>
         </div>

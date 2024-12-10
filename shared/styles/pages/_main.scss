@@ -197,12 +197,42 @@
 
   .title {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    align-items: center;
     padding: 0 10px;
     margin-bottom: 3px;
 
     > b {
       @include mx.ellipsis(1);
+    }
+    .size{
+      display:flex;
+      gap:10px;
+      i{
+        background:#c6c6c6;
+        border-radius:50%;
+        color:#fff;
+        font-size:15px;
+        line-height:28px;
+        padding:0 4px;
+        &.coast{
+          border-radius:8px;
+          padding:0 6px;
+        }
+      }
+      
+    }
+    .docs{
+      display: flex;
+      gap:10px;
+      i{
+        background:#8ad8ef;
+        border-radius:8px;
+        color:#fff;
+        font-size:13px;
+        line-height:28px;
+        padding:0 6px;
+      }
     }
   }
   .price {

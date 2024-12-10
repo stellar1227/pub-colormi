@@ -3,8 +3,32 @@
     <img class="img" src="@@imagePath" alt="">
     <span class="title">
       <b>@@title</b>
-      <i>A4x10부</i>
+      @@if (typeof size != 'undefined' && size)
+      {<span class="size">
+        @@if (typeof a3 != 'undefined' && a3){<i>A3</i>}
+        @@if (typeof a4 != 'undefined' && a4){<i>A4</i>}
+        @@if (typeof a5 != 'undefined' && a5){<i>A5</i>}
+        @@if (typeof b4 != 'undefined' && b4){<i>B4</i>}
+        @@if (typeof b5 != 'undefined' && b5){<i>B5</i>}
+        @@if (typeof free != 'undefined' && free){<i class="coast">Free</i>}
+      </span>}
+      @@if (typeof docs != 'undefined' && docs){
+      <span class="docs">
+        @@if (typeof snow != 'undefined' && snow){<i>스노우</i>}
+        @@if (typeof frr != 'undefined' && frr){<i>휘라레</i>}
+        @@if (typeof bnb != 'undefined' && bnb){<i>빈누보</i>}
+        @@if (typeof rdv != 'undefined' && rdv){<i>랑데부</i>}
+        @@if (typeof msm != 'undefined' && msm){<i>머쉬멜</i>}
+        @@if (typeof efx != 'undefined' && efx){<i>에폭시</i>}
+        @@if (typeof hrgr != 'undefined' && hrgr){<i>홀로그램</i>}
+        @@if (typeof gold != 'undefined' && gold){<i>금박</i>}
+        @@if (typeof white != 'undefined' && white){<i>백색모조</i>}
+        @@if (typeof env != 'undefined' && env){<i>편지봉투</i>}
+        @@if (typeof jack != 'undefined' && jack){<i>자켓봉투</i>}
+        @@if (typeof large != 'undefined' && large){<i>대봉투</i>}
+      </span>
+      }
     </span>
-    <span class="price">18,000원 ~ </span>
+    <span class="price">@@price 원 ~ </span>
   </a>
 </li>
