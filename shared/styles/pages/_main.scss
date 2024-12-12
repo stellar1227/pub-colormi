@@ -231,36 +231,37 @@
     > b {
       @include mx.ellipsis(1);
     }
-    .size{
-      display:flex;
-      gap:4px;
-      i{
-        background:#c6c6c6;
-        border-radius:50%;
-        color:#fff;
-        font-size:12px;
-        line-height:20px;
-        padding:0 3px;
-        &.coast{
-          border-radius:8px;
-          padding:0 5px;
-        }
-      }
-      
-    }
-    .docs{
-      display: flex;
-      gap:4px;
-      i{
-        background:#8ad8ef;
+   
+  }
+  .size{
+    display:flex;
+    gap:4px;
+    i{
+      background:#c6c6c6;
+      border-radius:50%;
+      color:#fff;
+      font-size:12px;
+      line-height:20px;
+      padding:0 3px;
+      &.coast{
         border-radius:8px;
-        color:#fff;
-        font-size:12px;
-        line-height:20px;
         padding:0 5px;
-        &.etc{
-          background-color:#98bac4;
-        }
+      }
+    }
+    
+  }
+  .docs{
+    display: flex;
+    gap:4px;
+    i{
+      background:#8ad8ef;
+      border-radius:8px;
+      color:#fff;
+      font-size:12px;
+      line-height:20px;
+      padding:0 5px;
+      &.etc{
+        background-color:#98bac4;
       }
     }
   }

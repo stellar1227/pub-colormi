@@ -85,15 +85,18 @@
           <!-- [D] 더보기 클릭 전 class: more-hide / 클릭 후: more-show -->
           <ul class="popular-list more-hide">
             @@loop('pages/common/popular-card-mo.html', [
-              { imagePath: "assets/images/temp/mo/popular-01.jpg", title: "책자표지"},
-              { imagePath: "assets/images/temp/mo/popular-02.jpg", title: "캘린더"},
-              { imagePath: "assets/images/temp/mo/popular-03.jpg", title: "초대장"},
-              { imagePath: "assets/images/temp/mo/popular-04.jpg", title: "카탈로그"},
-              { imagePath: "assets/images/temp/mo/popular-01.jpg", title: "책자표지"},
-              { imagePath: "assets/images/temp/mo/popular-02.jpg", title: "캘린더"},
-              { imagePath: "assets/images/temp/mo/popular-03.jpg", title: "초대장"},
-              { imagePath: "assets/images/temp/mo/popular-04.jpg", title: "카탈로그"},
+            { imagePath: "assets/images/temp/mo/popular-01.png", title: "무선제본", size: true, a4: true, a5:true, b5:true, free:true, price: "6,820"},
+            { imagePath: "assets/images/temp/mo/popular-02.png", title: "중철제본", size: true, a4: true, a5:true, b5:true, free:true, price: "5,720"},
+            { imagePath: "assets/images/temp/mo/popular-03.png", title: "초대장", docs:true, snow:true, rdv:true, price: "5,830"},
+              { imagePath: "assets/images/temp/mo/popular-04.png", title: "낱장인쇄" ,size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "330"},
+              
+              { imagePath: "assets/images/temp/mo/popular-05.png", title: "고급명함", docs:true, frr:true,bnb:true,rdv:true,etc:true, price:'1,870'},
+              { imagePath: "assets/images/temp/mo/popular-06.png", title: "카탈로그", size: true, a4: true, a5:true, b5:true, free:true, price: "6,820"},
+              { imagePath: "assets/images/temp/mo/popular-07.png", title: "소량전단", size: true, a3: true, a4: true, a5:true, b4:true, b5:true, free:true, price: "1,300"},
+              
+              { imagePath: "assets/images/temp/mo/popular-08.png", title: "특수명함", docs:true,efx:true, gold:true, hrgr:true, price:'18,150'},
             ])
+            
           </ul>
           <button type="button" class="btn-more-popular">더보기</button>
         </div>
@@ -315,10 +318,19 @@
       // 인기제품 더보기
       const btnMorePopular = document.querySelector('.btn-more-popular');
       const popularList = document.querySelector('.popular-list');
+      let count = 0;
       btnMorePopular.addEventListener('click', function() {
-        const isOpen = popularList.classList.contains('more-show');
-        popularList.classList.toggle('more-show', !isOpen);
-        popularList.classList.toggle('more-hide', isOpen);
+        popularList.classList.toggle('more-hide', count === 2);
+        popularList.classList.toggle('more-show', count === 0);
+        popularList.classList.toggle('more-show-complete', count === 1);
+        
+        const btnTxt = (count === 1) ? '닫기' : '더보기';
+        btnMorePopular.innerText = btnTxt;
+
+        count = (count > 2) ? 0 : count + 1;
+
+        return;
+       
       });
     </script>
     </body>

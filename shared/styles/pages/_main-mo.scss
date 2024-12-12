@@ -104,6 +104,7 @@
   gap: 29px 8px;
   margin-bottom: 30px;
 
+  //추후 데이터 바인딩하면 이건 필요없으므로 삭제 계산해서 보여주면됨
   &.more-hide {
     > li:nth-child(n + 5) {
       display: none;
@@ -111,6 +112,12 @@
   }
 
   &.more-show {
+    > li:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  &.more-show-complete{
     > li {
       display: block;
     }
@@ -120,18 +127,18 @@
     margin-bottom: 9px;
   }
 
-  .text {
+  .title {
     display: flex;
     flex-wrap: nowrap;
     font-size: 14px;
     line-height: normal;
-    letter-spacing: -0z5px;
-
-    .title {
+    letter-spacing: -0.5px;
+    gap:10px;
+    padding: 0;
+    & > b {
       display: block;
       overflow: hidden;
-      padding: 0;
-      margin: 0;
+      margin:0;
       white-space: nowrap;
       text-overflow: ellipsis;
       color: #3e3e3e;
@@ -140,17 +147,17 @@
     .price {
       flex-shrink: 0;
       padding: 0;
-      padding-left: 13px;
       color: #e52263;
     }
   }
 
   .img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
   }
 
-  &.more-show + .btn-more-popular:after {
+  &.more-show-complete + .btn-more-popular:after {
     transform: rotate(-90deg) scaleY(1.4);
   }
 }
