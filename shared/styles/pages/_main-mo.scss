@@ -61,9 +61,14 @@
         padding: 27px 39px;
         max-height: 100%;
         max-width: none;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 600;
         color: #fff;
         letter-spacing: -0.1px;
+
+        &.bottom{
+          bottom:-100%;
+        }
 
         &.invert {
           color: #3e3e3e;
@@ -71,7 +76,7 @@
 
         .desc {
           margin-top: 13px;
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 400;
           letter-spacing: -0.25px;
         }
@@ -84,7 +89,9 @@
         position: relative;
       }
     }
+    
   }
+
 
   .main-banner-pagination.swiper-pagination {
     bottom: 10px;
