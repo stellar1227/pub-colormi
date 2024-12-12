@@ -35,7 +35,7 @@
 
         <div class="gnb-area">
           <div class="util">
-            <a href="#sideMenu" class="btn-all-menu" onclick="document.querySelector('#allMenu').classList.toggle('active'); return false;">
+            <a href="#sideMenu" class="btn-all-menu" onclick="document.querySelector('#sideMenu').classList.toggle('active');document.documentElement.classList.add('freeze'); return false;">
               <span>전체메뉴</span>
             </a>
             <h1 class="logo"><a href="#"><img src="assets/images/img/header-logo.png" alt="칼라미"></a></h1>
@@ -101,14 +101,139 @@
         </div>
         <!-- //로그인 팝업 -->
         <div id="sideMenu">
-          <nav>
+          <div class="side-menu">
+            <button type="button" onClick="document.querySelector('#sideMenu').classList.remove('active'); document.documentElement.classList.remove('freeze')" class="btn-close">닫기</button>
+            <!-- 로그인 한 상태-->
+            <div class="sign-in">
+              <p class="welcome"><b>이지원</b>님 환영합니다</p>
+              <a href="#" class="link-mypage">마이페이지</a>
+              <a href="#" class="logout">로그아웃</a>
+              <a href="#" class="link-cart">장바구니<span>0</span></a>
+            </div>
+            <!-- 로그인 아닌 상태-->
+            <div class="sign-out">
+              <a href="#" class="link-login">로그인</a>
+              <a href="#" class="link-join">회원가입</a>
+            </div>
+            <div class="nav-tab" id="navTab">
+              <button type="button" class="active" data-id="categoryNav">카테고리</button>
+              <button type="button" data-id="communityNav">커뮤니티</button>
+            </div>
+            <nav id="categoryNav" class="nav-cont active">
+              <ul>
+                <li class="depth1 active">
+                  <a href="#">고객센터</a>
+                  <ul class="depth2">
+                    <li><a href="#">인쇄작업규약</a></li>
+                    <li><a href="#">출고안내</a></li>
+                    <li><a href="#">FAQ</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">브랜드 스토리</a>
+                  <ul class="depth2">
+                    <li><a href="#">브랜드 스토리</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">브랜드 몰</a>
+                  <ul class="depth2">
+                    <li><a href="#">바로DM</a></li>
+                    <li><a href="#">북베이크</a></li>
+                    <li><a href="#">농서남북</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <nav id="communityNav" class="nav-cont">
+              <ul>
+                <li class="depth1">
+                  <a href="#">책자</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub1.html#tab1">무선제본</a></li>
+                    <li><a href="gnbSub1.html#tab2">중철제본</a></li>
+                    <li><a href="gnbSub1.html#tab3">와이어제본</a></li>
+                    <li><a href="gnbSub1.html#tab4">떡(무선)제본</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">출력</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub2.html#tab1">낱장인쇄(제본없이)</a></li>
+                    <li><a href="gnbSub2.html#tab2">소량책자표시</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">명함</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub3.html#tab1">일반명함</a></li>
+                    <li><a href="gnbSub3.html#tab2">고급명함</a></li>
+                    <li><a href="gnbSub3.html#tab3">특수명함</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">홍보물</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub4.html#tab1">카탈로그</a></li>
+                    <li><a href="gnbSub4.html#tab2">대량전단</a></li>
+                    <li><a href="gnbSub4.html#tab3">소량전단</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">안내장</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub5.html#tab1">초대장</a></li>
+                    <li><a href="gnbSub5.html#tab2">엽서</a></li>
+                    <li><a href="gnbSub5.html#tab3">상품권</a></li>
+                  </ul>
+                </li>
+                <li class="depth1">
+                  <a href="#">판촉물</a>
+                  <ul class="depth2">
+                    <li><a href="gnbSub6.html#tab1">메모장</a></li>
+                    <li><a href="gnbSub6.html#tab2">복사용지</a></li>
+                    <li><a href="gnbSub6.html#tab3">주간플래너</a></li>
+                    <li><a href="gnbSub6.html#tab4">캘린더</a></li>
+                    <li><a href="gnbSub6.html#tab5">봉투</a></li>
+                  </ul>
+                </li>
 
-          </nav>
+              </ul>
+            </nav>
+
+            <aside class="nav-event">
+              <a href="#">
+                <img src="assets/images/temp/mo/event-nav01.png" alt="하나만 사도 무조건 무료배송" />
+              </a>
+            </aside>
+          </div>
         </div>
 
       </header>
     </div>
     <!-- //header -->
+    <script>
+      const navTab = document.querySelectorAll('#navTab button');
+      const navCont = document.querySelectorAll('.nav-cont');
+      navTab.forEach((tab, idx) => {
+        tab.addEventListener('click', (e) => {
+          const id = tab.dataset.id;
+          navCont.forEach((cont) => {
+            cont.id === id ? document.getElementById(id).classList.add('active') : cont.classList.remove('active');
+          })
+        })
+
+      })
+
+      const depth1 = document.querySelectorAll('.depth1');
+      const listIcon = document.querySelectorAll('.is-open');
+      depth1.forEach(menu => {
+        menu.addEventListener('click', (e) => {
+          menu.classList.toggle('active');
+
+        })
+      })
+    </script>
     <div id="container">
 
       <!-- 메인 배너(S) -->
