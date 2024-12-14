@@ -1,4 +1,58 @@
 .brandStory-container {
+  border-top: 1px solid #a7a7a7;
+  padding:20px 16px 0;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin-bottom: 12px;
+    span {
+      color: #e52163;
+    }
+  }
+  .brandStory-section{
+    padding-bottom:30px;
+    .brandStory-img {
+      display: block;
+      width: 100%;
+      margin-bottom: 25px;
+      border-radius:8px;
+      overflow: hidden;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2a2a2a;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    p {
+      font-size: 12px;
+      line-height: 175%;
+      font-weight: 400;
+      text-align: center;
+      color: #242424;
+      margin-bottom: 25px;
+      b{
+        font-weight:600;
+        color:#e52163;
+      }
+      i{
+        color:#1590c0;
+        font-weight:600;
+      }
+      span{
+        font-weight:600;
+        color:#efc220;
+      }
+      em{
+        font-weight:600;
+        color:#794099;
+      }
+    }
+  }
+  
+  
 }
 
 .event-container {
