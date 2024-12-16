@@ -161,12 +161,12 @@
     & > li {
       display: flex;
       border: 1px solid #a7a7a7;
-      border-radius: 8px;
+      border-radius: fff8px;
       overflow: hidden;
     }
     .img {
       width: 525px;
-      height: 420px;
+      height: 418px;
     }
     .text-box {
       position: relative;
@@ -182,8 +182,8 @@
     }
     p {
       padding-top: 34px;
-      font-size: 16px;
-      line-height: 30px;
+      font-size: 17px;
+      line-height: 160%;
       color: #242424;
       font-weight: lighter;
       letter-spacing: -1px;
