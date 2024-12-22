@@ -12,13 +12,89 @@
       color: #e52163;
     }
   }
+  h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  h4{
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+    text-align: center;
+  }
   p {
     font-size: 16px;
     line-height: 30px;
     font-weight: lighter;
     text-align: center;
     color: #2a2a2a;
-    margin-bottom: 86px;
+    margin-bottom: 56px;
+    img{
+      display: block;
+      margin:0 auto 20px;
+      width:300px;
+      height:auto;
+    }
+    b{
+      font-weight:600;
+      color:#e52163;
+    }
+    i{
+      color:#1590c0;
+      font-weight:600;
+    }
+    span{
+      font-weight:600;
+      color:#efc220;
+    }
+    em{
+      font-weight:600;
+      color:#794099;
+    }
+  }
+  .fsc{
+    
+    background-color:#f7f8f7;
+    border-radius:4px;
+    padding:36px 60px;
+    margin-bottom:40px;
+    display: flex;
+    gap:36px;
+    li{
+      position: relative;
+      flex:35%;
+      padding-right:36px;
+      &::after{
+        content:'';
+        width:1px;
+        height: 30px;
+        background:#e3e8e6;
+        
+        position:absolute;
+        right:0;
+        top:50%;
+        transform: translateY(-50%);
+      }
+      &:last-child{
+        flex:auto;
+        padding-left: 70px;
+        padding-right:0;
+        background:url(../assets/images/img/valid-icon.png) no-repeat 0 0;
+        background-size:44px auto;
+        b{
+          color:#2a2a2a
+        }
+      }
+      b{
+        display: block;
+        color:#767d7b;
+        font-size:14px;
+      }
+    }
   }
   .brandStory-img {
     display: block;
@@ -188,6 +264,7 @@
       font-weight: lighter;
       letter-spacing: -1px;
       opacity: 0.5;
+      
     }
     .good-button {
       position: absolute;
